@@ -595,7 +595,7 @@
     <header>
         <nav>
             <div class="nav-left">
-                <img src="https://cdn.pixabay.com/photo/2017/03/16/21/18/logo-2150297_1280.png" alt="Wine Hotel San Carlo Logo" class="logo">
+                <img src="./images/logoA.webp" style="height:80px" alt="Wine Hotel San Carlo Logo" class="logo">
             </div>
             <div class="nav-right">
                 <a href="#" class="book-button">PRENOTA</a>
