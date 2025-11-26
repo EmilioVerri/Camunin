@@ -57,14 +57,23 @@
         }
 
         /* Header e Navigation */
-        header {
-            position: fixed;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-            padding: 0.8rem 0;
-        }
+    /* Header e Navigation */
+header {
+    position: fixed;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95); /* ← CAMBIA: da rgba(255, 255, 255, 0.95) rimane uguale per avere bianco opaco iniziale */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 0.8rem 0;
+    transition: all 0.3s ease; /* ← AGGIUNGI questa riga per la transizione fluida */
+}
+
+header.scrolled { /* ← AGGIUNGI questa nuova classe */
+    background: rgba(255, 255, 255, 0.7); /* più trasparente quando scrolla */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+    backdrop-filter: blur(10px); /* effetto vetro smerigliato */
+    -webkit-backdrop-filter: blur(10px); /* compatibilità Safari */
+}
 
         nav {
             max-width: 100%;
@@ -568,21 +577,19 @@
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-         <div class="nav-left">
-                <a href="./index.php">
-                    <img src="./images/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo">
-                </a>
-            </div>
+     <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <img src="./images/logoA.webp" alt="Loading Logo" class="loading-logo">
+    </div>
 
     <!-- Header -->
     <header>
         <nav>
             <div class="nav-left">
-                <img src="./images/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo">
+            <a href="./index.php"><img src="./images/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo"></a>
             </div>
             <div class="nav-right">
-                <a href="./contatti.php" class="book-button">CONTATTACI</a>
+                <a href="./listinoprezzi.php" class="book-button">PRENOTA</a>
                 <div class="hamburger" onclick="toggleMenu()">
                     <span></span>
                     <span></span>
@@ -595,7 +602,7 @@
     <!-- Menu Overlay -->
     <div class="menu-overlay" id="menuOverlay">
         <ul class="nav-links">
-            <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+            <li><a href="./index.php" onclick="toggleMenu()">Home</a></li>
             <li><a href="./listinoprezzi.php" onclick="toggleMenu()">Listino Prezzi</a></li>
             <li><a href="./contatti.php" onclick="toggleMenu()">Contatti</a></li>
         </ul>
@@ -763,6 +770,20 @@
                 }
             });
         });
+
+
+
+
+
+        // Header scroll effect
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
     </script>
 </body>
 </html>

@@ -141,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="content">
                         <p class="greeting">Ciao ' . $nome . ',</p>
                         <p class="message">
-                            Grazie per averci contattato! Abbiamo ricevuto la tua richiesta e ti risponderemo <strong style="color: #db7343;">entro 24 ore</strong>.
+                            Grazie per averci contattato! Abbiamo ricevuto la tua richiesta </strong>.
                         </p>
                         <div class="highlight-box">
                             <p><strong style="color: #db7343;">📝 Riepilogo:</strong></p>
@@ -238,14 +238,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         /* Header e Navigation */
-        header {
-            position: fixed;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-            padding: 0.8rem 0;
-        }
+    /* Header e Navigation */
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95); /* ← CAMBIA QUESTA RIGA: header bianco iniziale */
+    z-index: 1000;
+    padding: 0.8rem 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* ← AGGIUNGI: leggera ombra iniziale */
+}
+
+header.scrolled {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.7); /* ← CAMBIA QUESTA RIGA: più trasparente quando scrolla */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px); /* ← AGGIUNGI: effetto vetro smerigliato */
+    -webkit-backdrop-filter: blur(10px); /* ← AGGIUNGI: compatibilità Safari */
+}
 
         nav {
             max-width: 100%;
@@ -395,7 +406,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         /* Main Content Area */
         main {
-            padding-top: 80px;
+            padding-top: 0;
             min-height: calc(100vh - 400px);
         }
 
@@ -406,7 +417,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            padding: 5rem 2rem;
+            padding: 8rem 2rem 5rem 2rem;
             text-align: center;
             color: white;
             position: relative;
@@ -817,10 +828,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Header -->
     <header>
         <nav>
-         <div class="nav-left">
-                <a href="./index.php">
-                    <img src="./images/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo">
-                </a>
+            <div class="nav-left">
+               <a href="./index.php"><img src="./images/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo"></a>
             </div>
             <div class="nav-right">
                 <a href="./listinoprezzi.php" class="book-button">PRENOTA</a>
@@ -869,7 +878,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="form-container">
                 <div class="form-header">
                     <h2>Richiedi Informazioni</h2>
-                    <p>Compilate il modulo e vi ricontatteremo entro 24 ore</p>
+                    <p>Compilate il modulo e vi ricontatteremo</p>
                 </div>
 
                 <form action="" method="POST" id="contactForm">
@@ -906,6 +915,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <button type="submit" class="submit-button">Invia Richiesta</button>
 
                     <div class="info-note">
+                        <p> La tua richiesta è importante per noi!</p>
                         <p>📧 Ti ricontatteremo per fornirti tutte le informazioni necessarie.</p>
                     </div>
                 </form>
@@ -1024,6 +1034,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     });
                 }
             });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
     </script>
 </body>
