@@ -569,9 +569,11 @@
 </head>
 <body>
     <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <img src="./images/logoA.webp" alt="Loading Logo" class="loading-logo">
-    </div>
+         <div class="nav-left">
+                <a href="./index.php">
+                    <img src="./images/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo">
+                </a>
+            </div>
 
     <!-- Header -->
     <header>

@@ -817,8 +817,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Header -->
     <header>
         <nav>
-            <div class="nav-left">
-                <img src="./images/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo">
+         <div class="nav-left">
+                <a href="./index.php">
+                    <img src="./images/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo">
+                </a>
             </div>
             <div class="nav-right">
                 <a href="./listinoprezzi.php" class="book-button">PRENOTA</a>
