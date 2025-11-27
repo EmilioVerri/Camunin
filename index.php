@@ -651,7 +651,7 @@ header.scrolled {
             <div class="hero-content">
                 <h1>Un avventura Valtellinese</h1>
                 <p>"La tua pausa perfetta tra natura, gusto e tranquillità."</p>
-                <a href="./listinoprezzi.php" class="cta-button">IL RISTORANTE</a>
+                <a href="./listinoprezzi.php" class="cta-button">Scopri di più</a>
             </div>
         </div>
         <div class="slider-dots">
