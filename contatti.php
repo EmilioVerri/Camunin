@@ -510,22 +510,22 @@ header.scrolled {
             padding: 5rem 2rem;
         }
 
-        .form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
+       .form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    opacity: 1; /* Cambiato da 0 a 1 */
+    transform: translateY(0); /* Cambiato da translateY(50px) a 0 */
+    transition: all 0.8s ease;
+}
 
-        .form-section.animate .form-container {
-            opacity: 1;
-            transform: translateY(0);
-        }
+     .form-section.animate .form-container {
+    opacity: 1;
+    transform: translateY(0);
+}
 
         .form-header {
             text-align: center;
@@ -561,16 +561,16 @@ header.scrolled {
             color: #db7343;
         }
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            font-size: 1rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-family: 'Georgia', serif;
-            transition: all 0.3s ease;
-        }
+   .form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Georgia', serif;
+    transition: all 0.3s ease;
+}
 
         .form-group input:focus,
         .form-group textarea:focus {
@@ -941,39 +941,95 @@ header.scrolled {
 
                 <div class="contact-info-card">
                     <div class="contact-info-icon">📱</div>
-                    <h3>Social Media</h3>
-                    <p><a href="https://instagram.com/camunin.casavacanze" target="_blank">@camunin.casavacanze</a></p>
-                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Seguici su Instagram!</p>
+                    <h3>Booking</h3>
+                    <p><a href="https://www.booking.com/hotel/it/amunin.it.html?aid=964694&app_hotel_id=15313738&checkin=2025-12-27&checkout=2025-12-29&from_sn=android&group_adults=2&group_children=0&label=hotel_details-ixj11u%401764710303&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&chal_t=1765230953365&force_referer=" target="_blank">@camunin.casavacanze</a></p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Seguici su Booking!</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Camunin</h3>
-                <p>Via Adda, 18 Chiuro (SO)</p>
-                <p>23030 Chiuro (SO)</p>
-                <p>Valtellina - Italia</p>
-            </div>
-            <div class="footer-section">
-                <h3>Contatti</h3>
-                <p>Tel: +39 366.8283156</p>
-                <p>Email: camunin.casavacanze@gmail.com</p>
-            </div>
-            <div class="footer-section">
-                <h3>Seguici</h3>
-                <a href="https://www.instagram.com/camunin.casavacanze/" target="_blank">Instagram</a>
-                <a href="#" target="_blank">Booking</a>
+   
+ <!-- Aggiungi questo nel <head> del tuo HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- CSS da aggiungere nel tuo <style> -->
+ <!-- CSS da aggiungere nel tuo <style> -->
+<style>
+/* Social Icons Styles */
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #ccc;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.social-links a:hover {
+    color: #db7343;
+    background: rgba(219, 115, 67, 0.1);
+    transform: translateY(-3px);
+}
+
+.social-links a i {
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover i {
+    transform: scale(1.1);
+}
+</style>
+
+<!-- FOOTER HTML -->
+<footer id="contatti">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>C'amunin</h3>
+            <p>Via Adda, 18</p>
+            <p>23030 Chiuro (SO)</p>
+            <p>Valtellina - Italia</p>
+        </div>
+        <div class="footer-section">
+            <h3>Contatti</h3>
+            <p>Tel: +39 366.8283156</p>
+            <p>Email: camunin.casavacanze@gmail.com</p>
+        </div>
+        <div class="footer-section">
+            <h3>Seguici</h3>
+            <div class="social-links">
+                <a href="https://www.instagram.com/camunin.casavacanze/" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.booking.com/hotel/it/amunin.it.html?aid=964694&app_hotel_id=15313738&checkin=2025-12-27&checkout=2025-12-29&from_sn=android&group_adults=2&group_children=0&label=hotel_details-ixj11u%401764710303&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&chal_t=1765230953365&force_referer=" target="_blank" title="Booking">
+                    <i class="fas fa-bed"></i>
+                </a>
+                <a href="https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2F%40camunin.casavacanze%3F_r%3D1%26_t%3DZN-91tbUUz1Upy&lang=en&enter_method=mandatory" target="_blank" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.facebook.com/people/CAmunin-Casa-Vacanze/61583657716861/?rdid=AIKZ696fgzkfR3Ju&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CZYbTg1zQ%2F" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Camunin. Tutti i diritti riservati. - CIN: IT014020C25KZ2NAGV</p>
-            <p>Realizzato da: <a href="https://emilioverri.altervista.org/" target="_blank">Emilio Verri</a></p>
-        </div>
-    </footer>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 C'amunin. Tutti i diritti riservati. - CIN: IT014020C25KZ2NAGV - CIR: 014020-LNI-00006</p>
+ <p>Realizzato da: <a href="https://emilioverri.altervista.org/" target="_blank" style="color: #db7343;">Emilio Verri</a></p>
+    </div>
+</footer>
 
     <script>
         // Loading Screen
