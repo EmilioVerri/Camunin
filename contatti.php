@@ -997,7 +997,7 @@ header.scrolled {
 <footer id="contatti">
     <div class="footer-content">
         <div class="footer-section">
-            <h3>C'amunin</h3>
+            <h3>C'Amunin</h3>
             <p>Via Adda, 18</p>
             <p>23030 Chiuro (SO)</p>
             <p>Valtellina - Italia</p>
@@ -1027,7 +1027,7 @@ header.scrolled {
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2025 C'amunin. Tutti i diritti riservati. - CIN: IT014020C25KZ2NAGV - CIR: 014020-LNI-00006</p>
+        <p>&copy; 2025 C'Amunin. Tutti i diritti riservati. - CIN: IT014020C25KZ2NAGV - CIR: 014020-LNI-00006</p>
  <p>Realizzato da: <a href="https://emilioverri.altervista.org/" target="_blank" style="color: #db7343;">Emilio Verri</a></p>
     </div>
 </footer>
