@@ -208,7 +208,7 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
             background: #db7343;
             color: white;
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 5px;
             transition: all 0.3s;
             font-size: 0.95rem;
             font-weight: 600;
@@ -610,23 +610,7 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
 
     <!-- Main Content -->
     <main>
-        <!-- SEZIONE SPECIALE OLIMPIADI -->
-        <section class="olimpiadi-section">
-            <div class="olimpiadi-pattern"></div>
-            <div class="olimpiadi-content">
-                <h2>SPECIALE OLIMPIADI</h2>
-                <p class="olimpiadi-date">Dal 6 al 22 febbraio 2026</p>
-                <p class="olimpiadi-subtitle">Tariffe indicate per notte. Pernottamento minimo 3 notti.</p>
-                
-                <div class="olimpiadi-pricing">
-
-                    <div class="price-row">
-                        <span class="price-label">Pernottamento per 1 o 4 ospiti</span>
-                        <span class="price-value">€ 500</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+  
 
         <!-- SEZIONE LISTINO PREZZI -->
         <section class="listino-section">
@@ -686,6 +670,26 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
                             <span class="price-tag">€ 220,00</span>
                         </div>
                         <p class="price-note">Bambini fino a 4 anni gratuiti. Culla disponibile gratuitamente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+              <!-- SEZIONE SPECIALE OLIMPIADI -->
+        <section class="olimpiadi-section">
+            <div class="olimpiadi-pattern"></div>
+            <div class="olimpiadi-content">
+                <h2>SPECIALE OLIMPIADI</h2>
+                <p class="olimpiadi-date">Dal 6 al 22 febbraio 2026</p>
+                <p class="olimpiadi-subtitle">Tariffe indicate per notte. Pernottamento minimo 3 notti.</p>
+                
+                <div class="olimpiadi-pricing">
+
+                    <div class="price-row">
+                        <span class="price-label">Pernottamento per 1 o 4 ospiti</span>
+                        <span class="price-value">€ 500</span>
                     </div>
                 </div>
             </div>
@@ -754,14 +758,15 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
                 <a href="https://www.instagram.com/camunin.casavacanze/" target="_blank" title="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://www.booking.com/hotel/it/amunin.it.html?aid=964694&app_hotel_id=15313738&checkin=2025-12-27&checkout=2025-12-29&from_sn=android&group_adults=2&group_children=0&label=hotel_details-ixj11u%401764710303&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&chal_t=1765230953365&force_referer=" target="_blank" title="Booking">
-                    <i class="fas fa-bed"></i>
-                </a>
+
                 <a href="https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2F%40camunin.casavacanze%3F_r%3D1%26_t%3DZN-91tbUUz1Upy&lang=en&enter_method=mandatory" target="_blank" title="TikTok">
                     <i class="fab fa-tiktok"></i>
                 </a>
                 <a href="https://www.facebook.com/people/CAmunin-Casa-Vacanze/61583657716861/?rdid=AIKZ696fgzkfR3Ju&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CZYbTg1zQ%2F" target="_blank" title="Facebook">
                     <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.booking.com/hotel/it/amunin.it.html?aid=964694&app_hotel_id=15313738&checkin=2025-12-27&checkout=2025-12-29&from_sn=android&group_adults=2&group_children=0&label=hotel_details-ixj11u%401764710303&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&chal_t=1765230953365&force_referer=" target="_blank" title="Booking">
+                    <i class="fas fa-bed"></i>
                 </a>
             </div>
         </div>

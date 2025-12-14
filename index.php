@@ -211,7 +211,7 @@ header.scrolled {
             background: #db7343;
             color: white;
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 5px;
             transition: all 0.3s;
             font-size: 0.95rem;
             font-weight: 600;
@@ -637,21 +637,21 @@ header.scrolled {
             <div class="hero-content">
                 <h1>RELAX A 360°</h1>
                 <p>"Un’oasi di tranquillità nel cuore di Chiuro, dove natura, comfort e silenzio si incontrano."</p>
-                <a href="./listinoprezzi.php" class="cta-button">SCOPRI DI PIÙ</a>
+                <a href="./listinoprezzi.php" class="cta-button">LISTINO PREZZI</a>
             </div>
         </div>
         <div class="slide slide2">
             <div class="hero-content">
                 <h1>ELEGANZA & COMFORT</h1>
                 <p>"Il posto ideale per rigenerarsi tra i vigneti della Valtellina, avvolti da pace e autenticità."</p>
-                <a href="./listinoprezzi.php" class="cta-button">LE NOSTRE CAMERE</a>
+                <a href="./contatti.php" class="cta-button">CONTATTACI</a>
             </div>
         </div>
         <div class="slide slide3">
             <div class="hero-content">
-                <h1>Un avventura Valtellinese</h1>
+                <h1>UN' AVVENTURA VALTELLINESE</h1>
                 <p>"La tua pausa perfetta tra natura, gusto e tranquillità."</p>
-                <a href="./listinoprezzi.php" class="cta-button">Scopri di più</a>
+                <a href="./listinoprezzi.php" class="cta-button">PRENOTA</a>
             </div>
         </div>
         <div class="slider-dots">
@@ -667,7 +667,7 @@ header.scrolled {
         <p>Ciao! Sono Sara e gestisco C'Amunin, la nostra casa vacanze, con l'aiuto del mio compagno Michael e dei miei genitori.</p>
         <p>C'Amunin non è semplicemente una casa vacanze, ma un dono prezioso lasciato dal mio caro nonno materno. Il nome della casa, è ispirato al suo cognome, Amonini, come omaggio alle nostre radici e alla sua memoria.</p>
         <p>Oggi mettiamo il nostro impegno e il nostro cuore in ogni dettaglio, per far sentire chi soggiorna qui accolto come in famiglia.</p>
-        <p>Io, la mia famiglia e il nostro cane Teo, che vive liberamente in casa nostra, vi aspettiamo!</p>
+        <p>Io, la mia famiglia e il nostro cane Teo vi aspettiamo!</p>
     </section>
 
   <!-- HTML + CSS + JS COMPLETO PER FEATURES -->
@@ -848,6 +848,7 @@ setInterval(() => {
 <!-- HTML + CSS COMPLETO PER ROOM SECTION (FOTO SINISTRA) -->
 
 <!-- SOSTITUISCI LA ROOM-SECTION PRECEDENTE CON QUESTA -->
+ <!--
 <section class="room-section">
     <div class="room-container">
         <div class="room-image" style="background-image: url('./images/camunin2.webp');">
@@ -982,10 +983,11 @@ setInterval(() => {
 }
 </style>
 
-
+-->
 <!-- HTML + CSS + JS COMPLETO PER PARALLAX SECTION -->
 
 <!-- AGGIUNGI QUESTA NUOVA SEZIONE DOPO LA "room-section" -->
+ <!--
 <section class="parallax-section">
     <div class="parallax-content">
         <h2>Vivi un'Esperienza Unica</h2>
@@ -1076,10 +1078,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
     
-
+-->
 <!-- HTML + CSS COMPLETO PER ROOM SECTION ALTERNATIVA (FOTO DESTRA) - VERSIONE CORRETTA -->
 
 <!-- AGGIUNGI QUESTA NUOVA SEZIONE DOPO LA "parallax-section" -->
+
+<!--
 <section class="room-section-alt">
     <div class="room-container-alt">
         <div class="room-content-alt">
@@ -1240,6 +1244,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+-->
 
 <!-- AGGIUNGI QUESTA NUOVA SEZIONE PRIMA DEL FOOTER -->
 <section class="contact-section" id="contatti-mappa">
@@ -1291,15 +1296,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         <a href="https://www.instagram.com/camunin.casavacanze/" target="_blank" title="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://www.booking.com/hotel/it/amunin.it.html" target="_blank" title="Booking">
-                            <i class="fas fa-bed"></i>
-                        </a>
                         <a href="https://www.tiktok.com/@camunin.casavacanze" target="_blank" title="TikTok">
                             <i class="fab fa-tiktok"></i>
                         </a>
                         <a href="https://www.facebook.com/people/CAmunin-Casa-Vacanze/61583657716861/" target="_blank" title="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
+                        <a href="https://www.booking.com/hotel/it/amunin.it.html" target="_blank" title="Booking">
+                            <i class="fas fa-bed"></i>
+                        </a>                        
                     </div>
                 </div>
             </div>
@@ -1582,14 +1587,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="https://www.instagram.com/camunin.casavacanze/" target="_blank" title="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://www.booking.com/hotel/it/amunin.it.html?aid=964694&app_hotel_id=15313738&checkin=2025-12-27&checkout=2025-12-29&from_sn=android&group_adults=2&group_children=0&label=hotel_details-ixj11u%401764710303&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&chal_t=1765230953365&force_referer=" target="_blank" title="Booking">
-                    <i class="fas fa-bed"></i>
-                </a>
+
                 <a href="https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2F%40camunin.casavacanze%3F_r%3D1%26_t%3DZN-91tbUUz1Upy&lang=en&enter_method=mandatory" target="_blank" title="TikTok">
                     <i class="fab fa-tiktok"></i>
                 </a>
                 <a href="https://www.facebook.com/people/CAmunin-Casa-Vacanze/61583657716861/?rdid=AIKZ696fgzkfR3Ju&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CZYbTg1zQ%2F" target="_blank" title="Facebook">
                     <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.booking.com/hotel/it/amunin.it.html?aid=964694&app_hotel_id=15313738&checkin=2025-12-27&checkout=2025-12-29&from_sn=android&group_adults=2&group_children=0&label=hotel_details-ixj11u%401764710303&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&chal_t=1765230953365&force_referer=" target="_blank" title="Booking">
+                    <i class="fas fa-bed"></i>
                 </a>
             </div>
         </div>
