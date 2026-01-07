@@ -629,6 +629,7 @@ header.scrolled {
         <ul class="nav-links">
             <li><a href="./index.php" onclick="toggleMenu()">Home</a></li>
             <li><a href="./listinoprezzi.php" onclick="toggleMenu()">Listino Prezzi</a></li>
+             <li><a href="./galleria.php" onclick="toggleMenu()">Galleria</a></li>
             <li><a href="./contatti.php" onclick="toggleMenu()">Contatti</a></li>
         </ul>
     </div>

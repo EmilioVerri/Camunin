@@ -604,6 +604,7 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
         <ul class="nav-links">
             <li><a href="./index.php" onclick="toggleMenu()">Home</a></li>
             <li><a href="./listinoprezzi.php" onclick="toggleMenu()">Listino Prezzi</a></li>
+             <li><a href="./galleria.php" onclick="toggleMenu()">Galleria</a></li>
             <li><a href="./contatti.php" onclick="toggleMenu()">Contatti</a></li>
         </ul>
     </div>
@@ -612,10 +613,10 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
     <main>
   
 
-        <!-- SEZIONE LISTINO PREZZI -->
+       <!-- SEZIONE LISTINO PREZZI -->
         <section class="listino-section">
             <div class="listino-header">
-                <h2>Listino prezzi</h2>
+                <h2>Listino prezzi diretti</h2>
                 <p class="listino-description">Il nostro listino prezzi varia a seconda del periodo stagionale. Tariffe indicate per notte.</p>
                 <div class="listino-contacts">
                     <span>📱 +39. 366.8283156</span>
@@ -630,52 +631,85 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
                 <!-- BASSA STAGIONE -->
                 <div class="season-column">
                     <h3>Bassa stagione</h3>
-                    <p class="season-months">Marzo, Aprile, Maggio, Giugno, Settembre, Ottobre e Novembre</p>
-                    <p class="season-note">*esclusi ponti festivi e weekend Wine Trail: si applicano le tariffe di Alta stagione</p>
+                    <p class="season-months">Marzo, Aprile, Maggio, Settembre, Ottobre e Novembre</p>
+                    <p class="season-note">*escluse festività</p>
 
                     <div class="price-card">
                         <div class="price-header">
-                            <h4>Pernottamento per 1 o 2 persone</h4>
-                            <span class="price-tag">€ 120,00</span>
+                            <h4>1 adulto</h4>
+                            <span class="price-tag">€ 80,00</span>
                         </div>
-                        <p class="price-note">Bambini fino a 4 anni gratuiti. Culla disponibile gratuitamente</p>
                     </div>
 
                     <div class="price-card">
                         <div class="price-header">
-                            <h4>Pernottamento per 3 o 4 persone</h4>
+                            <h4>2 adulti</h4>
+                            <span class="price-tag">€ 120,00</span>
+                        </div>
+                    </div>
+
+                    <div class="price-card">
+                        <div class="price-header">
+                            <h4>3 adulti</h4>
+                            <span class="price-tag">€ 160,00</span>
+                        </div>
+                    </div>
+
+                    <div class="price-card">
+                        <div class="price-header">
+                            <h4>4 adulti</h4>
                             <span class="price-tag">€ 200,00</span>
                         </div>
-                        <p class="price-note">Bambini fino a 4 anni gratuiti. Culla disponibile gratuitamente.</p>
                     </div>
                 </div>
 
                 <!-- ALTA STAGIONE -->
                 <div class="season-column">
                     <h3>Alta stagione</h3>
-                    <p class="season-months">Dicembre, Gennaio, Febbraio, Luglio* e Agosto*</p>
-                    <p class="season-note">*Luglio e Agosto pernottamento minimo 5 notti.</p>
+                    <p class="season-months">Dicembre, Gennaio, Febbraio, Giugno, Luglio e Agosto</p>
+                    <p class="season-note">*dal 6 al 22 febbraio tariffe maggiorate per Olimpiadi</p>
 
                     <div class="price-card">
                         <div class="price-header">
-                            <h4>Pernottamento per 1 o 2 persone</h4>
-                            <span class="price-tag">€ 140,00</span>
+                            <h4>1 adulto</h4>
+                            <span class="price-tag">€ 100,00</span>
                         </div>
-                        <p class="price-note">Bambini fino a 4 anni gratuiti. Culla disponibile gratuitamente</p>
                     </div>
 
                     <div class="price-card">
                         <div class="price-header">
-                            <h4>Pernottamento per 3 o 4 persone</h4>
+                            <h4>2 adulti</h4>
+                            <span class="price-tag">€ 140,00</span>
+                        </div>
+                    </div>
+
+                    <div class="price-card">
+                        <div class="price-header">
+                            <h4>3 adulti</h4>
+                            <span class="price-tag">€ 180,00</span>
+                        </div>
+                    </div>
+
+                    <div class="price-card">
+                        <div class="price-header">
+                            <h4>4 adulti</h4>
                             <span class="price-tag">€ 220,00</span>
                         </div>
-                        <p class="price-note">Bambini fino a 4 anni gratuiti. Culla disponibile gratuitamente.</p>
                     </div>
                 </div>
             </div>
+
+            <!-- Note aggiuntive -->
+            <div class="listino-header" style="margin-top: 3rem;">
+                <p class="listino-description" style="text-align: left; max-width: 800px; margin: 0 auto;">
+                    <strong>Note importanti:</strong><br><br>
+                    • Bambini fino a 6 anni gratuiti<br>
+                    • Bambini dai 7 ai 17 anni: € 20 a notte<br>
+                    • Per soggiorni di 5 notti o più applichiamo il 10% di sconto<br>
+                    • Al momento animali non ammessi
+                </p>
+            </div>
         </section>
-
-
 
               <!-- SEZIONE SPECIALE OLIMPIADI -->
         <section class="olimpiadi-section">
