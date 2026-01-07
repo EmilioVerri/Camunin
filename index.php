@@ -5,7 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
     <title>C'Amunin</title>
+       <!-- AGGIUNGI QUESTA RIGA PER FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+/* Social Icons Styles - FOOTER */
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #ccc;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.social-links a:hover {
+    color: #db7343;
+    background: rgba(219, 115, 67, 0.1);
+    transform: translateY(-3px);
+}
+
+.social-links a i {
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover i {
+    transform: scale(1.1);
+}
+
+
+
         * {
             margin: 0;
             padding: 0;
@@ -1616,6 +1656,7 @@ document.addEventListener('DOMContentLoaded', () => {
 -->
 
 <!-- AGGIUNGI QUESTA NUOVA SEZIONE PRIMA DEL FOOTER -->
+<!-- AGGIUNGI QUESTA NUOVA SEZIONE PRIMA DEL FOOTER -->
 <section class="contact-section" id="contatti-mappa">
     <div class="contact-header">
         <h2>Contattaci per prenotare o richiedere il tuo preventivo</h2>
@@ -1634,7 +1675,12 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="contact-info">
             <div class="contact-item">
-                <div class="contact-icon">📍</div>
+                <div class="contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                </div>
                 <div class="contact-text">
                     <h3>C'Amunin - Casa Vacanze</h3>
                     <p>Via Adda, 18 Chiuro (SO) Valtellina, Lombardia</p>
@@ -1642,7 +1688,11 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <div class="contact-item">
-                <div class="contact-icon">📞</div>
+                <div class="contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                </div>
                 <div class="contact-text">
                     <h3>Telefono</h3>
                     <p><a href="tel:+393668283156">+39 366.8283156</a></p>
@@ -1650,7 +1700,12 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <div class="contact-item">
-                <div class="contact-icon">✉️</div>
+                <div class="contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </div>
                 <div class="contact-text">
                     <h3>Email</h3>
                     <p><a href="mailto:camunin.casavacanze@gmail.com">camunin.casavacanze@gmail.com</a></p>
@@ -1658,22 +1713,38 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <div class="contact-item">
-                <div class="contact-icon-social">📱</div>
+                <div class="contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"></path>
+                        <path d="M12 18h.01"></path>
+                    </svg>
+                </div>
                 <div class="contact-text">
                     <h3>Seguici</h3>
                     <div class="contact-social-links">
                         <a href="https://www.instagram.com/camunin.casavacanze/" target="_blank" title="Instagram">
-                            <i class="fab fa-instagram"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
                         </a>
                         <a href="https://www.tiktok.com/@camunin.casavacanze" target="_blank" title="TikTok">
-                            <i class="fab fa-tiktok"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                            </svg>
                         </a>
                         <a href="https://www.facebook.com/people/CAmunin-Casa-Vacanze/61583657716861/" target="_blank" title="Facebook">
-                            <i class="fab fa-facebook-f"></i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
                         </a>
                         <a href="https://www.booking.com/hotel/it/amunin.it.html" target="_blank" title="Booking">
-                            <i class="fas fa-bed"></i>
-                        </a>                        
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1693,56 +1764,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </section>
 
 <style>
-/* AGGIUNGI QUESTI STILI AL TUO CSS ESISTENTE */
-.contact-icon-social {
-    font-size: 2.5rem;
-    min-width: 60px;
-    height: 60px;
-    background: #db7343;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(219, 115, 67, 0.3);
-}
-
-.contact-social-links {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 0.5rem;
-}
-
-.contact-social-links a {
-    color: #555;
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(219, 115, 67, 0.1);
-}
-
-.contact-social-links a:hover {
-    color: #db7343;
-    background: rgba(219, 115, 67, 0.2);
-    transform: translateY(-3px);
-}
-
-.contact-social-links a i {
-    transition: transform 0.3s ease;
-}
-
-.contact-social-links a:hover i {
-    transform: scale(1.1);
-}
-</style>
-
-<style>
-/* AGGIUNGI QUESTI STILI NUOVI NEL TUO CSS */
+/* CONTACT SECTION STYLES */
 .contact-section {
     background: #f9f9f9;
     padding: 5rem 0;
@@ -1798,15 +1820,26 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 
 .contact-icon {
-    font-size: 2.5rem;
-    min-width: 60px;
-    height: 60px;
-    background: #db7343;
-    border-radius: 50%;
+    min-width: 50px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #db7343;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(219, 115, 67, 0.3);
+    color: #db7343;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover .contact-icon {
+    background: rgba(219, 115, 67, 0.05);
+    transform: translateY(-2px);
+}
+
+.contact-icon svg {
+    width: 24px;
+    height: 24px;
 }
 
 .contact-text h3 {
@@ -1830,6 +1863,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
 .contact-text a:hover {
     color: #db7343;
+}
+
+.contact-social-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.contact-social-links a {
+    color: #666;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1.5px solid #ddd;
+    background: white;
+}
+
+.contact-social-links a:hover {
+    color: #db7343;
+    border-color: #db7343;
+    background: rgba(219, 115, 67, 0.05);
+    transform: translateY(-2px);
+}
+
+.contact-social-links a svg {
+    transition: transform 0.3s ease;
+}
+
+.contact-social-links a:hover svg {
+    transform: scale(1.1);
 }
 
 .contact-directions {
@@ -1885,57 +1953,12 @@ document.addEventListener('DOMContentLoaded', () => {
 </style>
 
 <script>
-// MODIFICA IL TUO JAVASCRIPT AGGIUNGENDO ANCHE LE NUOVE SEZIONI
+// MODIFICA IL TUO JAVASCRIPT AGGIUNGENDO ANCHE LA CONTACT-SECTION
 document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.intro, .feature-card, .history, .location, .room-section, .room-section-alt, .parallax-section, .contact-section');
+    const animatedElements = document.querySelectorAll('.intro, .feature-card, .history, .location, .contact-section');
     animatedElements.forEach(el => observer.observe(el));
 });
 </script>
-
-
- <!-- Aggiungi questo nel <head> del tuo HTML -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<!-- CSS da aggiungere nel tuo <style> -->
- <!-- CSS da aggiungere nel tuo <style> -->
-<style>
-/* Social Icons Styles */
-.social-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
-.social-links a {
-    color: #ccc;
-    font-size: 1.8rem;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.social-links a:hover {
-    color: #db7343;
-    background: rgba(219, 115, 67, 0.1);
-    transform: translateY(-3px);
-}
-
-.social-links a i {
-    transition: transform 0.3s ease;
-}
-
-.social-links a:hover i {
-    transform: scale(1.1);
-}
-</style>
-
 <!-- FOOTER HTML -->
 <footer id="contatti">
     <div class="footer-content">
