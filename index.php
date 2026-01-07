@@ -264,24 +264,24 @@ header.scrolled {
             opacity: 1;
         }
 
+       .slide3 {
+            background-color: #db7343;
+            background-image: url('./images/salacucina.jpg');
+        }
+
         .slide1 {
             background-color: #db7343;
-            background-image: url('./images/camunin7.jpeg');
+            background-image: url('./images/casacongiardino.jpg');
         }
 
         .slide2 {
             background-color: #db7343;
-            background-image: url('./images/camunin3.webp');
+            background-image: url('./images/cameraconcuscino.jpg');
         }
-
-        .slide3 {
+       /*         .slide3 {
             background-color: #db7343;
-            background-image: url('./images/camunin11.webp');
-        }
-                .slide3 {
-            background-color: #db7343;
-            background-image: url('./images/camunin12.webp');
-        }
+            background-image: url('./images/salacucina.jpg');
+        }*/
 
         .hero-content {
             max-width: 800px;
@@ -675,44 +675,102 @@ header.scrolled {
 
 <!-- SOSTITUISCI LA SEZIONE FEATURES ESISTENTE CON QUESTA -->
 <section class="features" id="camere">
+    <div class="features-header">
+        <h2>La Nostra Casa</h2>
+    </div>
     <div class="features-container">
+        <!-- Card 1 -->
         <div class="feature-card">
-            <div class="feature-image" style="background-image: url('./images/openspace.webp');">
+            <div class="feature-image" style="background-image: url('./images/cucina.jpg');" onclick="openModal(0)">
                 <div class="feature-overlay"></div>
             </div>
             <div class="feature-content">
-                <h3>Openspace</h3>
-                <p>Salotto e cucina attrezzata (no lavastoviglie) con vista.</p>
+                <div class="feature-text collapsed" id="text-0">
+                    La cucina è dotata di tutto il necessario: frigor, frizzer, piatti, bicchieri, tazze, posate, ciotole, pentole, padelle, moka, bollitore dell'acqua, spremiagrumi, kit monouso pulizie, sgrassatore e lavastoviglie.
+                </div>
+                <span class="read-more-btn" onclick="toggleText(event, 0)">Leggi altro</span>
             </div>
         </div>
 
+        <!-- Card 2 -->
         <div class="feature-card">
-            <div class="feature-image" style="background-image: url('./images/terrazzo.webp');">
+            <div class="feature-image" style="background-image: url('./images/zonarelax.jpg');" onclick="openModal(1)">
                 <div class="feature-overlay"></div>
             </div>
             <div class="feature-content">
-                <h3>Terrazzo</h3>
-                <p>Terrazzo di 25 mq panoramico.</p>
+                <div class="feature-text collapsed" id="text-1">
+                    Puoi rilassarti sul divano guardando la TV o il fuoco della stufa a legna.
+                </div>
+                <!--<span class="read-more-btn" onclick="toggleText(event, 1)">Leggi altro</span>-->
             </div>
         </div>
 
+        <!-- Card 3 - SENZA TESTO -->
         <div class="feature-card">
-            <div class="feature-image" style="background-image: url('./images/giardino.webp');">
+            <div class="feature-image full-image" style="background-image: url('./images/terrazzogiardino.jpg');" onclick="openModal(2)">
+                <div class="feature-overlay"></div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="feature-card">
+            <div class="feature-image" style="background-image: url('./images/cameraculla.jpg');" onclick="openModal(3)">
                 <div class="feature-overlay"></div>
             </div>
             <div class="feature-content">
-                <h3>Giardino</h3>
-                <p>Grande giardino completamente recintato.</p>
+                <div class="feature-text collapsed" id="text-3">
+                  Questa camera ha doppia esposizione con vista sul giardino e sulle Alpi retiche. La camera è dotata di lenzuola ascigamani e TV.
+                </div>
+                <span class="read-more-btn" onclick="toggleText(event, 3)">Leggi altro</span>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+       <div class="feature-card">
+            <div class="feature-image full-image" style="background-image: url('./images/cameradue.jpg');" onclick="openModal(4)">
+                <div class="feature-overlay"></div>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+       <div class="feature-card">
+            <div class="feature-image full-image" style="background-image: url('./images/bagno.jpg');" onclick="openModal(5)">
+                <div class="feature-overlay"></div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Modal -->
+<div id="imageModal" class="modal" onclick="closeModalOnBackground(event)">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <div class="modal-content-wrapper">
+        <img class="modal-image" id="modalImage" src="" alt="Feature Image">
+        <div class="modal-text" id="modalTextContainer">
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+</div>
+
 <style>
-/* MODIFICA QUESTI STILI NELLA SEZIONE FEATURES DEL TUO CSS */
+/* HEADER SEZIONE */
+.features-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 2rem;
+}
+
+.features-header h2 {
+    font-size: 2.5rem;
+    color: #db7343;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* STILI FEATURES */
 .feature-image {
     width: 100%;
-    height: 300px;
+    height: 250px;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -721,6 +779,13 @@ header.scrolled {
     position: relative;
     overflow: hidden;
     transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+/* Immagine a tutta altezza quando non c'è testo */
+.feature-image.full-image {
+    height: 100%;
+    min-height: 400px;
 }
 
 .feature-overlay {
@@ -729,7 +794,7 @@ header.scrolled {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(219, 115, 67, 0.2);
+    background: rgba(0, 0, 0, 0);
     transition: all 0.3s ease;
 }
 
@@ -738,12 +803,237 @@ header.scrolled {
 }
 
 .feature-card:hover .feature-overlay {
-    background: rgba(219, 115, 67, 0.1);
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.feature-content {
+    padding: 2rem;
+}
+
+.feature-text {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1rem;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.feature-text.collapsed {
+    max-height: 4.5em;
+}
+
+.feature-text.expanded {
+    max-height: 1000px;
+}
+
+.read-more-btn {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #db7343;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: underline;
+}
+
+.read-more-btn:hover {
+    color: #c5633a;
+}
+
+/* MODAL STYLES */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal-content-wrapper {
+    position: relative;
+    margin: 3% auto;
+    padding: 2rem;
+    max-width: 900px;
+    width: 90%;
+}
+
+.modal-image {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.modal-text {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* Nascondi il contenitore testo se vuoto */
+.modal-text:empty {
+    display: none;
+}
+
+.modal-text p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    z-index: 10000;
+}
+
+.close-modal:hover {
+    background: rgba(219, 115, 67, 0.8);
+    transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+    .features-header h2 {
+        font-size: 2rem;
+    }
+
+    .modal-content-wrapper {
+        margin: 10% auto;
+        padding: 1rem;
+    }
+
+    .modal-text {
+        padding: 1.5rem;
+    }
+
+    .feature-image.full-image {
+        min-height: 300px;
+    }
 }
 </style>
 
- <!-- HTML + CSS + JS COMPLETO PER HISTORY SLIDER -->
+<script>
+// DATI FEATURES
+const featuresData = [
+    {
+        image: './images/cucina.jpg',
+        description: 'La cucina è dotata di tutto il necessario: frigor, frizzer, piatti, bicchieri, tazze, posate, ciotole, pentole, padelle, moka, bollitore dell\'acqua, spremiagrumi, kit monouso pulizie, sgrassatore e lavastoviglie.'
+    },
+    {
+        image: './images/zonarelax.jpg',
+        description: 'Puoi rilassarti sul divano guardando la TV o il fuoco della stufa a legna.'
+    },
+    {
+        image: './images/terrazzogiardino.jpg',
+        description: ''
+    },
+    {
+        image: './images/cameraculla.jpg',
+        description: 'Questa camera ha doppia esposizione con vista sul giardino e sulle Alpi retiche. La camera è dotata di lenzuola ascigamani e TV.'
+    },
+    {
+        image: './images/cameradue.jpg',
+        description: ''
+    },
+    {
+        image: './images/bagno.jpg',
+        description: ''
+    }
+];
 
+// Toggle testo espandibile
+function toggleText(event, index) {
+    event.stopPropagation();
+    const textElement = document.getElementById(`text-${index}`);
+    const btn = event.target;
+    
+    if (textElement.classList.contains('collapsed')) {
+        textElement.classList.remove('collapsed');
+        textElement.classList.add('expanded');
+        btn.textContent = 'Leggi meno';
+    } else {
+        textElement.classList.remove('expanded');
+        textElement.classList.add('collapsed');
+        btn.textContent = 'Leggi altro';
+    }
+}
+
+// Apri modal
+function openModal(index) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTextContainer = document.getElementById('modalTextContainer');
+    const modalDescription = document.getElementById('modalDescription');
+    
+    const data = featuresData[index];
+    
+    modalImage.src = data.image;
+    
+    // Mostra o nascondi la descrizione
+    if (data.description && data.description.trim() !== '') {
+        modalDescription.textContent = data.description;
+        modalTextContainer.style.display = 'block';
+    } else {
+        modalDescription.textContent = '';
+        modalTextContainer.style.display = 'none';
+    }
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Chiudi modal
+function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Chiudi modal cliccando sullo sfondo
+function closeModalOnBackground(event) {
+    if (event.target.id === 'imageModal') {
+        closeModal();
+    }
+}
+
+// Chiudi modal con ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+</script>
+
+ <!-- HTML + CSS + JS COMPLETO PER HISTORY SLIDER -->
 <!-- SOSTITUISCI LA SEZIONE HISTORY ESISTENTE CON QUESTA -->
 <section class="history">
     <div class="history-content">
@@ -755,15 +1045,7 @@ header.scrolled {
         <p>Disponibili 2 city bike e 3 bici da bambini, due piccole e una grande.</p>
     </div>
     <div class="history-slider">
-        <div class="history-slide active" style="background-image: url('./images/camunin1.webp');"></div>
-        <div class="history-slide" style="background-image: url('./images/camunin2.webp');"></div>
-        <div class="history-slide" style="background-image: url('./images/camunin3.webp');"></div>
-        <div class="history-slide" style="background-image: url('./images/camunin4.webp');"></div>
-        <div class="history-slide" style="background-image: url('./images/camunin5.webp');"></div>
-        <div class="history-slide" style="background-image: url('./images/camunin6.webp');"></div>
-        <div class="history-slide" style="background-image: url('./images/camunin7.webp');"></div>
-        <div class="history-slide" style="background-image: url('./images/camunin8.webp');"></div>
-        <div class="history-slide" style="background-image: url('./images/camunin9.webp');"></div>
+        <div id="historySliderContainer"></div>
         <div class="history-slider-nav">
             <button class="history-prev" onclick="changeHistorySlide(-1)">‹</button>
             <button class="history-next" onclick="changeHistorySlide(1)">›</button>
@@ -779,6 +1061,13 @@ header.scrolled {
     position: relative;
     border-radius: 5px;
     overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+#historySliderContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
 .history-slide {
@@ -827,23 +1116,102 @@ header.scrolled {
     transform: scale(1.1);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
+
+@media (max-width: 768px) {
+    .history-slider {
+        height: 300px;
+    }
+    
+    .history-prev,
+    .history-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+}
 </style>
 
 <script>
-// AGGIUNGI QUESTO JAVASCRIPT PRIMA DELLA CHIUSURA DEL TAG 
+// AGGIUNGI QUESTO JAVASCRIPT PRIMA DELLA CHIUSURA DEL TAG </body>
+
+// Funzione per caricare dinamicamente tutte le immagini dalla cartella
+async function loadImagesFromFolder() {
+    const container = document.getElementById('historySliderContainer');
+    
+    // Lista delle immagini da cercare (puoi aggiungere altri nomi qui)
+    const imageNames = [
+        'camunin1', 'camunin2', 'camunin3', 'camunin4', 'camunin5',
+        'camunin6', 'camunin7', 'camunin8', 'camunin9', 'camunin10',
+        'camunin11', 'camunin12', 'cucina', 'zonarelax', 'terrazzogiardino',
+        'cameraculla', 'cameradue', 'bagno', 'openspace', 'terrazzo', 'giardino'
+    ];
+    
+    const extensions = ['.webp', '.jpg', '.jpeg', '.png'];
+    let loadedImages = [];
+    
+    // Prova a caricare ogni immagine con le diverse estensioni
+    for (const name of imageNames) {
+        for (const ext of extensions) {
+            const imgPath = `./images/${name}${ext}`;
+            
+            // Verifica se l'immagine esiste
+            const img = new Image();
+            img.src = imgPath;
+            
+            await new Promise((resolve) => {
+                img.onload = () => {
+                    loadedImages.push(imgPath);
+                    resolve();
+                };
+                img.onerror = () => {
+                    resolve(); // Continua anche se l'immagine non esiste
+                };
+                // Timeout di 500ms per evitare blocchi
+                setTimeout(resolve, 500);
+            });
+        }
+    }
+    
+    // Rimuovi duplicati
+    loadedImages = [...new Set(loadedImages)];
+    
+    // Crea le slide con le immagini caricate
+    loadedImages.forEach((imgPath, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'history-slide' + (index === 0 ? ' active' : '');
+        slide.style.backgroundImage = `url('${imgPath}')`;
+        container.appendChild(slide);
+    });
+    
+    // Inizializza lo slider solo se ci sono immagini
+    if (loadedImages.length > 0) {
+        initHistorySlider();
+    }
+}
+
 let currentHistorySlide = 0;
-const historySlides = document.querySelectorAll('.history-slide');
+let historySlides = [];
+let autoSlideInterval;
+
+function initHistorySlider() {
+    historySlides = document.querySelectorAll('.history-slide');
+    
+    // Auto avanzamento ogni 4 secondi
+    autoSlideInterval = setInterval(() => {
+        changeHistorySlide(1);
+    }, 4000);
+}
 
 function changeHistorySlide(direction) {
+    if (historySlides.length === 0) return;
+    
     historySlides[currentHistorySlide].classList.remove('active');
     currentHistorySlide = (currentHistorySlide + direction + historySlides.length) % historySlides.length;
     historySlides[currentHistorySlide].classList.add('active');
 }
 
-// Auto avanzamento ogni 4 secondi
-setInterval(() => {
-    changeHistorySlide(1);
-}, 4000);
+// Carica le immagini quando la pagina è pronta
+document.addEventListener('DOMContentLoaded', loadImagesFromFolder);
 </script>
 
 <!-- HTML + CSS COMPLETO PER ROOM SECTION (FOTO SINISTRA) -->
