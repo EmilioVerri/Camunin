@@ -186,7 +186,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-    <style>
+   <style>
         * {
             margin: 0;
             padding: 0;
@@ -238,25 +238,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         /* Header e Navigation */
-    /* Header e Navigation */
-header {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.95); /* ← CAMBIA QUESTA RIGA: header bianco iniziale */
-    z-index: 1000;
-    padding: 0.8rem 0;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* ← AGGIUNGI: leggera ombra iniziale */
-}
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            padding: 0.8rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-header.scrolled {
-    position: fixed;
-    background: rgba(255, 255, 255, 0.7); /* ← CAMBIA QUESTA RIGA: più trasparente quando scrolla */
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-    backdrop-filter: blur(10px); /* ← AGGIUNGI: effetto vetro smerigliato */
-    -webkit-backdrop-filter: blur(10px); /* ← AGGIUNGI: compatibilità Safari */
-}
+        header.scrolled {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
 
         nav {
             max-width: 100%;
@@ -371,6 +370,7 @@ header.scrolled {
         .menu-overlay.active .nav-links li:nth-child(1) { transition-delay: 0.1s; }
         .menu-overlay.active .nav-links li:nth-child(2) { transition-delay: 0.2s; }
         .menu-overlay.active .nav-links li:nth-child(3) { transition-delay: 0.3s; }
+        .menu-overlay.active .nav-links li:nth-child(4) { transition-delay: 0.4s; }
 
         .nav-links a {
             text-decoration: none;
@@ -410,10 +410,10 @@ header.scrolled {
             min-height: calc(100vh - 400px);
         }
 
-        /* SEZIONE CONTATTI */
+        /* CONTACT HERO SECTION */
         .contact-hero {
-            background: linear-gradient(135deg, rgba(219, 115, 67, 0.9) 0%, rgba(197, 99, 58, 0.9) 100%), 
-                        url('./images/camunin12.webp');
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('./images/giardino.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -421,17 +421,14 @@ header.scrolled {
             text-align: center;
             color: white;
             position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .contact-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.2);
-            z-index: 1;
+            display: none;
         }
 
         .contact-hero-content {
@@ -454,13 +451,13 @@ header.scrolled {
             font-weight: 300;
             letter-spacing: 2px;
             margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .contact-hero p {
             font-size: 1.3rem;
             line-height: 1.8;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
         }
 
         /* Alert Messages */
@@ -510,22 +507,22 @@ header.scrolled {
             padding: 5rem 2rem;
         }
 
-       .form-container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: white;
-    padding: 3rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    opacity: 1; /* Cambiato da 0 a 1 */
-    transform: translateY(0); /* Cambiato da translateY(50px) a 0 */
-    transition: all 0.8s ease;
-}
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s ease;
+        }
 
-     .form-section.animate .form-container {
-    opacity: 1;
-    transform: translateY(0);
-}
+        .form-section.animate .form-container {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         .form-header {
             text-align: center;
@@ -561,16 +558,16 @@ header.scrolled {
             color: #db7343;
         }
 
-   .form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-family: 'Georgia', serif;
-    transition: all 0.3s ease;
-}
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Georgia', serif;
+            transition: all 0.3s ease;
+        }
 
         .form-group input:focus,
         .form-group textarea:focus {
@@ -686,9 +683,10 @@ header.scrolled {
 
         .contact-info-card {
             text-align: center;
-            padding: 2rem;
+            padding: 3rem 2rem;
             background: #f9f9f9;
             border-radius: 15px;
+            border: 2px solid transparent;
             transition: all 0.3s ease;
             opacity: 0;
             transform: translateY(30px);
@@ -713,12 +711,32 @@ header.scrolled {
 
         .contact-info-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: #db7343;
+            background: white;
+            box-shadow: 0 10px 30px rgba(219, 115, 67, 0.1);
         }
 
         .contact-info-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            border: 2px solid #db7343;
+            border-radius: 50%;
+            color: #db7343;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-card:hover .contact-info-icon {
+            background: rgba(219, 115, 67, 0.05);
+            transform: scale(1.1);
+        }
+
+        .contact-info-icon svg {
+            width: 48px;
+            height: 48px;
         }
 
         .contact-info-card h3 {
@@ -738,6 +756,7 @@ header.scrolled {
             color: #333;
             text-decoration: none;
             transition: color 0.3s;
+            font-weight: 500;
         }
 
         .contact-info-card a:hover {
@@ -792,9 +811,52 @@ header.scrolled {
             text-decoration: underline;
         }
 
+        /* Social Icons Styles - Footer */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: #ccc;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .social-links a:hover {
+            color: #db7343;
+            background: rgba(219, 115, 67, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .social-links a i {
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover i {
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
             .nav-links a {
                 font-size: 2rem;
+            }
+
+            .contact-hero {
+                background-attachment: scroll;
+                min-height: 50vh;
+                padding: 6rem 2rem 4rem 2rem;
             }
 
             .contact-hero h1 {
@@ -816,8 +878,17 @@ header.scrolled {
             .form-header h2 {
                 font-size: 2rem;
             }
+
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-info-card {
+                padding: 2rem 1.5rem;
+            }
         }
-    </style>
+</style>
 </head>
 <body>
     <!-- Loading Screen -->
@@ -855,12 +926,12 @@ header.scrolled {
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section class="contact-hero">
-            <div class="contact-hero-content">
-                <h1>Benvenuti</h1>
-                <p>Contattaci per prenotare o per ricevere il tuo preventivo</p>
-            </div>
-        </section>
+     <section class="contact-hero">
+    <div class="contact-hero-content">
+        <h1>Benvenuti</h1>
+        <p>Contattaci per prenotare o per ricevere il tuo preventivo</p>
+    </div>
+</section>
 
         <!-- Form Section -->
         <section class="form-section">
@@ -916,7 +987,7 @@ header.scrolled {
                     <button type="submit" class="submit-button">Invia Richiesta</button>
 
                     <div class="info-note">
-                        <p> La tua richiesta è importante per noi!</p>
+                        <p> La tua richiesta è importante!</p>
                         <p>📧 Ti ricontatteremo per fornirti tutte le informazioni necessarie.</p>
                     </div>
                 </form>
@@ -924,30 +995,155 @@ header.scrolled {
         </section>
 
         <!-- Contact Info Cards -->
-        <section class="contact-info-section">
-            <div class="contact-info-grid">
-                <div class="contact-info-card">
-                    <div class="contact-info-icon">📞</div>
-                    <h3>Telefono</h3>
-                    <p><a href="tel:+393668283156">+39 366.8283156</a></p>
-                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Chiamaci</p>
-                </div>
-
-                <div class="contact-info-card">
-                    <div class="contact-info-icon">✉️</div>
-                    <h3>Email</h3>
-                    <p><a href="mailto:camunin.casavacanze@gmail.com">camunin.casavacanze@gmail.com</a></p>
-                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Scrivici</p>
-                </div>
-
-                <div class="contact-info-card">
-                    <div class="contact-info-icon">📱</div>
-                    <h3>Instagram</h3>
-                    <p><a href="https://www.instagram.com/camunin.casavacanze/" target="_blank">@camunin.casavacanze</a></p>
-                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Seguici su Booking!</p>
-                </div>
+        <!-- Contact Info Cards -->
+<section class="contact-info-section">
+    <div class="contact-info-grid">
+        <div class="contact-info-card">
+            <div class="contact-info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
             </div>
-        </section>
+            <h3>Telefono</h3>
+            <p><a href="tel:+393668283156">+39 366.8283156</a></p>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem;">Chiamaci</p>
+        </div>
+
+        <div class="contact-info-card">
+            <div class="contact-info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+            </div>
+            <h3>Email</h3>
+            <p><a href="mailto:camunin.casavacanze@gmail.com">camunin.casavacanze@gmail.com</a></p>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem;">Scrivici</p>
+        </div>
+
+        <div class="contact-info-card">
+            <div class="contact-info-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </div>
+            <h3>Instagram</h3>
+            <p><a href="https://www.instagram.com/camunin.casavacanze/" target="_blank">@camunin.casavacanze</a></p>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem;">Seguici!</p>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Contact Info Section - AGGIORNA QUESTI STILI */
+.contact-info-section {
+    background: white;
+    padding: 5rem 2rem;
+}
+
+.contact-info-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.contact-info-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #f9f9f9;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.contact-info-section.animate .contact-info-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-info-section.animate .contact-info-card:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.contact-info-section.animate .contact-info-card:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.contact-info-section.animate .contact-info-card:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-10px);
+    border-color: #db7343;
+    background: white;
+    box-shadow: 0 10px 30px rgba(219, 115, 67, 0.1);
+}
+
+.contact-info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border: 2px solid #db7343;
+    border-radius: 50%;
+    color: #db7343;
+    transition: all 0.3s ease;
+}
+
+.contact-info-card:hover .contact-info-icon {
+    background: rgba(219, 115, 67, 0.05);
+    transform: scale(1.1);
+}
+
+.contact-info-icon svg {
+    width: 48px;
+    height: 48px;
+}
+
+.contact-info-card h3 {
+    font-size: 1.5rem;
+    color: #db7343;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.contact-info-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.contact-info-card a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.contact-info-card a:hover {
+    color: #db7343;
+}
+
+@media (max-width: 768px) {
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-info-card {
+        padding: 2rem 1.5rem;
+    }
+}
+</style>
     </main>
 
    
