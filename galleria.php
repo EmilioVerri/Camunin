@@ -7,6 +7,44 @@
     <title>Galleria - C'Amunin Casa Vacanze</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+
+
+/* Aggiungi questo nel tuo <style> */
+@media (max-width: 768px) {
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 40px;
+        padding: 15px;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+
+    .lightbox-close {
+        top: 10px;
+        right: 10px;
+        font-size: 35px;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
         * {
             margin: 0;
             padding: 0;
@@ -587,7 +625,7 @@
         </div>
     </footer>
 
-    <script>
+  <script>
         // Raccogli tutte le immagini
         let galleryImages = [];
         let currentImageIndex = 0;
@@ -679,6 +717,41 @@
                 closeLightbox();
             }
         });
-    </script>
+
+        // ============================================
+        // TOUCH SUPPORT PER MOBILE (SWIPE)
+        // ============================================
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        const lightbox = document.getElementById('lightbox');
+
+        lightbox.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+
+        lightbox.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+
+        function handleSwipe() {
+            const swipeThreshold = 50; // Minimo movimento per considerarlo swipe
+            
+            if (touchEndX < touchStartX - swipeThreshold) {
+                // Swipe left - immagine successiva
+                changeImage(1);
+            }
+            
+            if (touchEndX > touchStartX + swipeThreshold) {
+                // Swipe right - immagine precedente
+                changeImage(-1);
+            }
+        }
+</script>
+
+
+
+
 </body>
 </html>
