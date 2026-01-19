@@ -702,15 +702,120 @@ header.scrolled {
         </div>
     </section>
 
-    <section class="intro">
-        <h4>La Nostra Storia</h2>
-        <h2>ACCOGLIERE CON AMORE</h2>
-        <p>Ciao! Sono Sara e gestisco C'Amunin, la nostra casa vacanze, con l'aiuto del mio compagno Michael e dei miei genitori.</p>
-        <p>C'Amunin non è semplicemente una casa vacanze, ma un dono prezioso lasciato dal mio caro nonno materno. Il nome della casa, è ispirato al suo cognome, Amonini, come omaggio alle nostre radici e alla sua memoria.</p>
-        <p>Oggi mettiamo il nostro impegno e il nostro cuore in ogni dettaglio, per far sentire chi soggiorna qui accolto come in famiglia.</p>
-        <p>Io, la mia famiglia e il nostro cane Teo vi aspettiamo!</p>
-    </section>
+<section class="intro">
+    <div class="intro-container">
+        <!-- Immagine Sara e Teo a sinistra -->
+        <div class="intro-image-container">
+            <img src="./images/sara.jpg" alt="Sara con Teo" class="intro-image">
+        </div>
+        
+        <!-- Testo a destra -->
+        <div class="intro-text">
+            <h4>La Nostra Storia</h4>
+            <h2>ACCOGLIERE CON AMORE</h2>
+            <p>Ciao! Sono Sara e gestisco C'Amunin, la nostra casa vacanze, con l'aiuto del mio compagno Michael e dei miei genitori.</p>
+            <p>C'Amunin non è semplicemente una casa vacanze, ma un dono prezioso lasciato dal mio caro nonno materno. Il nome della casa, è ispirato al suo cognome, Amonini, come omaggio alle nostre radici e alla sua memoria.</p>
+            <p>Oggi mettiamo il nostro impegno e il nostro cuore in ogni dettaglio, per far sentire chi soggiorna qui accolto come in famiglia.</p>
+            <p>Io, la mia famiglia e il nostro cane Teo vi aspettiamo!</p>
+        </div>
+    </div>
+</section>
+<style>
+/* Intro Section */
+.intro {
+    max-width: 1200px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
 
+.intro.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.intro-container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.intro-image-container {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(219, 115, 67, 0.3);
+    transition: all 0.5s ease;
+}
+
+.intro-image-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 50px rgba(219, 115, 67, 0.4);
+}
+
+.intro-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.intro-image-container:hover .intro-image {
+    transform: scale(1.1);
+}
+
+.intro-text {
+    text-align: left;
+}
+
+.intro-text h4 {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.intro-text h2 {
+    font-size: 2.5rem;
+    color: #db7343;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.intro-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 968px) {
+    .intro-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .intro-image-container {
+        width: 280px;
+        height: 280px;
+        margin: 0 auto;
+    }
+    
+    .intro-text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-text h2 {
+        font-size: 2rem;
+    }
+}
+</style>
   <!-- HTML + CSS + JS COMPLETO PER FEATURES -->
 
 <!-- SOSTITUISCI LA SEZIONE FEATURES ESISTENTE CON QUESTA -->
