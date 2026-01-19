@@ -615,6 +615,9 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
 
        <!-- SEZIONE LISTINO PREZZI -->
         <section class="listino-section">
+
+
+        
             <div class="listino-header">
                 <h2>Listino prezzi diretti</h2>
                 <p class="listino-description">Il nostro listino prezzi varia a seconda del periodo stagionale. Tariffe indicate per notte.</p>
@@ -626,6 +629,118 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
                     <a href="./contatti.php">💬 Sezione Contatti</a>
                 </div>
             </div>
+
+
+
+
+<!-- CERCA E SOSTITUISCI QUESTA PARTE -->
+<!-- Note aggiuntive -->
+<div class="listino-header" style="margin-top: 3rem;">
+    <div class="note-importanti">
+        <h3>Note importanti</h3>
+        <ul class="note-list">
+            <li>
+                <span class="note-icon">👶</span>
+                <span class="note-text">Bambini fino a 6 anni gratuiti</span>
+            </li>
+            <li>
+                <span class="note-icon">🧒</span>
+                <span class="note-text">Bambini dai 7 ai 17 anni: € 20 a notte</span>
+            </li>
+            <li>
+                <span class="note-icon">🎁</span>
+                <span class="note-text">Per soggiorni di 5 notti o più applichiamo il 10% di sconto</span>
+            </li>
+            <li>
+                <span class="note-icon">🐾</span>
+                <span class="note-text">Al momento animali non ammessi</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<style>
+    /* NOTE IMPORTANTI STYLES */
+.note-importanti {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+.note-importanti h3 {
+    font-size: 1.8rem;
+    color: #db7343;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.note-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.note-list li {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.note-list li:last-child {
+    border-bottom: none;
+}
+
+.note-list li:hover {
+    background: rgba(219, 115, 67, 0.03);
+    padding-left: 1rem;
+    border-radius: 8px;
+}
+
+.note-icon {
+    font-size: 1.8rem;
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.note-text {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .note-importanti {
+        padding: 1.5rem;
+    }
+    
+    .note-importanti h3 {
+        font-size: 1.5rem;
+    }
+    
+    .note-icon {
+        font-size: 1.5rem;
+        min-width: 40px;
+    }
+    
+    .note-text {
+        font-size: 0.95rem;
+    }
+}
+</style>
+
+
+
+
+
+
 
             <div class="listino-container">
                 <!-- BASSA STAGIONE -->
@@ -699,20 +814,11 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
                 </div>
             </div>
 
-            <!-- Note aggiuntive -->
-            <div class="listino-header" style="margin-top: 3rem;">
-                <p class="listino-description" style="text-align: left; max-width: 800px; margin: 0 auto;">
-                    <strong>Note importanti:</strong><br><br>
-                    • Bambini fino a 6 anni gratuiti<br>
-                    • Bambini dai 7 ai 17 anni: € 20 a notte<br>
-                    • Per soggiorni di 5 notti o più applichiamo il 10% di sconto<br>
-                    • Al momento animali non ammessi
-                </p>
-            </div>
+        
         </section>
 
               <!-- SEZIONE SPECIALE OLIMPIADI -->
-        <section class="olimpiadi-section">
+        <!--<section class="olimpiadi-section">
             <div class="olimpiadi-pattern"></div>
             <div class="olimpiadi-content">
                 <h2>SPECIALE OLIMPIADI</h2>
@@ -727,7 +833,7 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
     </main>
 
  <!-- Aggiungi questo nel <head> del tuo HTML -->

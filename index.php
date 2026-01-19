@@ -306,7 +306,7 @@ header.scrolled {
 
        .slide3 {
             background-color: #db7343;
-            background-image: url('./images/salacucina.jpg');
+            background-image: url('./images/scorrevoleTre.jpg');
         }
 
         .slide1 {
@@ -316,7 +316,7 @@ header.scrolled {
 
         .slide2 {
             background-color: #db7343;
-            background-image: url('./images/cameraconcuscino.jpg');
+            background-image: url('./images/scorrevoleDue.jpg');
         }
        /*         .slide3 {
             background-color: #db7343;
@@ -714,6 +714,8 @@ header.scrolled {
   <!-- HTML + CSS + JS COMPLETO PER FEATURES -->
 
 <!-- SOSTITUISCI LA SEZIONE FEATURES ESISTENTE CON QUESTA -->
+<!-- CERCA QUESTA PARTE (circa riga 850-920) E SOSTITUISCILA -->
+
 <section class="features" id="camere">
     <div class="features-header">
         <h2>La Nostra Casa</h2>
@@ -726,7 +728,7 @@ header.scrolled {
             </div>
             <div class="feature-content">
                 <div class="feature-text collapsed" id="text-0">
-                    La cucina è dotata di tutto il necessario: frigor, frizzer, piatti, bicchieri, tazze, posate, ciotole, pentole, padelle, moka, bollitore dell'acqua, spremiagrumi, kit monouso pulizie, sgrassatore e lavastoviglie.
+                    La cucina è dotata di tutto il necessario: frigor, frizzer, piatti, bicchieri, tazze, posate, ciotole, pentole, padelle, moka, bollitore dell'acqua, spremiagrumi, kit monouso pulizie e sgrassatore.
                 </div>
                 <span class="read-more-btn" onclick="toggleText(event, 0)">Leggi altro</span>
             </div>
@@ -741,46 +743,62 @@ header.scrolled {
                 <div class="feature-text collapsed" id="text-1">
                     Puoi rilassarti sul divano guardando la TV o il fuoco della stufa a legna.
                 </div>
-                <!--<span class="read-more-btn" onclick="toggleText(event, 1)">Leggi altro</span>-->
             </div>
         </div>
 
-        <!-- Card 3 - SENZA TESTO -->
+        <!-- Card 3 - MODIFICATA -->
         <div class="feature-card">
-            <div class="feature-image full-image" style="background-image: url('./images/terrazzogiardino.jpg');" onclick="openModal(2)">
+            <div class="feature-image" style="background-image: url('./images/terrazzaDue.jpg');" onclick="openModal(2)">
                 <div class="feature-overlay"></div>
             </div>
+            <div class="feature-content">
+                <div class="feature-text collapsed" id="text-2">
+                    Gli ospiti possono usufruire di un ampio giardino recintato ad uso esclusivo e di una spaziosa terrazza panoramica, perfetta per pranzi e momenti di relax all'aperto nei mesi primaverili ed estivi.
+                </div>
+                <span class="read-more-btn" onclick="toggleText(event, 2)">Leggi altro</span>
+            </div>
         </div>
 
-        <!-- Card 4 -->
+        <!-- Card 4 - MODIFICATA -->
         <div class="feature-card">
-            <div class="feature-image" style="background-image: url('./images/cameraculla.jpg');" onclick="openModal(3)">
+            <div class="feature-image" style="background-image: url('./images/cameraMatrimonialeDue.jpg');" onclick="openModal(3)">
                 <div class="feature-overlay"></div>
             </div>
             <div class="feature-content">
                 <div class="feature-text collapsed" id="text-3">
-                  Questa camera ha doppia esposizione con vista sul giardino e sulle Alpi retiche. La camera è dotata di lenzuola ascigamani e TV.
+                    La prima camera matrimoniale, con travi a vista, offre una splendida vista sul giardino e sulle Alpi, creando un'atmosfera calda, luminosa e rilassante.
                 </div>
                 <span class="read-more-btn" onclick="toggleText(event, 3)">Leggi altro</span>
             </div>
         </div>
 
-        <!-- Card 5 -->
-       <div class="feature-card">
-            <div class="feature-image full-image" style="background-image: url('./images/cameradue.jpg');" onclick="openModal(4)">
+        <!-- Card 5 - MODIFICATA -->
+        <div class="feature-card">
+            <div class="feature-image" style="background-image: url('./images/cameraMatrimonialeTre.jpg');" onclick="openModal(4)">
                 <div class="feature-overlay"></div>
+            </div>
+            <div class="feature-content">
+                <div class="feature-text collapsed" id="text-4">
+                    La seconda camera matrimoniale, con culla, gode di doppia esposizione e offre una splendida vista sul giardino e sulle Alpi Retiche. È fornita di lenzuola e dispone di TV.
+                </div>
+                <span class="read-more-btn" onclick="toggleText(event, 4)">Leggi altro</span>
             </div>
         </div>
 
-        <!-- Card 6 -->
-       <div class="feature-card">
-            <div class="feature-image full-image" style="background-image: url('./images/bagno.jpg');" onclick="openModal(5)">
+        <!-- Card 6 - MODIFICATA -->
+        <div class="feature-card">
+            <div class="feature-image" style="background-image: url('./images/bagnoDue.jpg');" onclick="openModal(5)">
                 <div class="feature-overlay"></div>
+            </div>
+            <div class="feature-content">
+                <div class="feature-text collapsed" id="text-5">
+                    Bagno finestrato con doccia, completo di set di asciugamani. Su richiesta è disponibile gratuitamente una lavatrice al piano inferiore.
+                </div>
+                <span class="read-more-btn" onclick="toggleText(event, 5)">Leggi altro</span>
             </div>
         </div>
     </div>
 </section>
-
 <!-- Modal -->
 <div id="imageModal" class="modal" onclick="closeModalOnBackground(event)">
     <span class="close-modal" onclick="closeModal()">&times;</span>
@@ -983,6 +1001,7 @@ header.scrolled {
 
 <script>
 // DATI FEATURES
+// DATI FEATURES - SOSTITUISCI QUESTO ARRAY
 const featuresData = [
     {
         image: './images/cucina.jpg',
@@ -993,23 +1012,22 @@ const featuresData = [
         description: 'Puoi rilassarti sul divano guardando la TV o il fuoco della stufa a legna.'
     },
     {
-        image: './images/terrazzogiardino.jpg',
-        description: ''
+        image: './images/terrazzaDue.jpg',
+        description: 'Gli ospiti possono usufruire di un ampio giardino recintato ad uso esclusivo e di una spaziosa terrazza panoramica, perfetta per pranzi e momenti di relax all\'aperto nei mesi primaverili ed estivi.'
     },
     {
-        image: './images/cameraculla.jpg',
-        description: 'Questa camera ha doppia esposizione con vista sul giardino e sulle Alpi retiche. La camera è dotata di lenzuola ascigamani e TV.'
+        image: './images/cameraMatrimonialeDue.jpg',
+        description: 'La prima camera matrimoniale, con travi a vista, offre una splendida vista sul giardino e sulle Alpi, creando un\'atmosfera calda, luminosa e rilassante.'
     },
     {
-        image: './images/cameradue.jpg',
-        description: ''
+        image: './images/cameraMatrimonialeTre.jpg',
+        description: 'La seconda camera matrimoniale, con culla, gode di doppia esposizione e offre una splendida vista sul giardino e sulle Alpi Retiche. È fornita di lenzuola e dispone di TV.'
     },
     {
-        image: './images/bagno.jpg',
-        description: ''
+        image: './images/bagnoDue.jpg',
+        description: 'Bagno finestrato con doccia, completo di set di asciugamani. Su richiesta è disponibile gratuitamente una lavatrice al piano inferiore.'
     }
 ];
-
 // Toggle testo espandibile
 function toggleText(event, index) {
     event.stopPropagation();

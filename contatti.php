@@ -413,7 +413,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         /* CONTACT HERO SECTION */
         .contact-hero {
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                        url('./images/giardino.jpg');
+                        url('./images/contattaci.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
