@@ -5,9 +5,10 @@
 require_once 'auth_check.php';
 ?>
 <head>
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Admin - Camunin</title>
+    <title>Listino prezzi Admin - Camunin</title>
     <style>
         * {
             margin: 0;
@@ -392,7 +393,7 @@ require_once 'auth_check.php';
     <div class="header">
         <div class="header-left">
             <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-            <h1>Dashboard Admin</h1>
+            <h1>Listino prezzi Admin</h1>
         </div>
         <div class="user-info">
             <span>👤 Admin</span>

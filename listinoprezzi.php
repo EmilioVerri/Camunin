@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
 
 
-<?php
+    <?php
 
-// Configurazione database
-$host = 'localhost';
-$dbname = 'my_camunin';
-$username = 'root';
-$password = '';
+    // Configurazione database
+    $host = 'localhost';
+    $dbname = 'my_camunin';
+    $username = 'root';
+    $password = '';
 
-// Connessione al database
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    die("Errore di connessione al database");
-}
+    // Connessione al database
+    try {
+        $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        die("Errore di connessione al database");
+    }
 
-// Recupera i prezzi di Bassa Stagione
-$stmtBassa = $pdo->query("SELECT id, descrizione, prezzo FROM bassastagione ORDER BY id ASC");
-$prezziBassa = $stmtBassa->fetchAll(PDO::FETCH_ASSOC);
+    // Recupera i prezzi di Bassa Stagione
+    $stmtBassa = $pdo->query("SELECT id, descrizione, prezzo FROM bassastagione ORDER BY id ASC");
+    $prezziBassa = $stmtBassa->fetchAll(PDO::FETCH_ASSOC);
 
-// Recupera i prezzi di Alta Stagione
-$stmtAlta = $pdo->query("SELECT id, descrizione, prezzo FROM altastagione ORDER BY id ASC");
-$prezziAlta = $stmtAlta->fetchAll(PDO::FETCH_ASSOC);
+    // Recupera i prezzi di Alta Stagione
+    $stmtAlta = $pdo->query("SELECT id, descrizione, prezzo FROM altastagione ORDER BY id ASC");
+    $prezziAlta = $stmtAlta->fetchAll(PDO::FETCH_ASSOC);
 
-// Verifica stato online del listino
-$stmtOnline = $pdo->query("SELECT online FROM onlinelistino ORDER BY id DESC LIMIT 1");
-$rowOnline = $stmtOnline->fetch(PDO::FETCH_ASSOC);
-$listinoOnline = ($rowOnline && $rowOnline['online'] === 'si');
+    // Verifica stato online del listino
+    $stmtOnline = $pdo->query("SELECT online FROM onlinelistino ORDER BY id DESC LIMIT 1");
+    $rowOnline = $stmtOnline->fetch(PDO::FETCH_ASSOC);
+    $listinoOnline = ($rowOnline && $rowOnline['online'] === 'si');
 
+    // Se il listino è offline, reindirizza alla homepage
+    if (!$listinoOnline) {
+        header('Location: ./index.php');
+        exit();
+    }
 
-?>
+    ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
@@ -79,10 +85,13 @@ $listinoOnline = ($rowOnline && $rowOnline['online'] === 'si');
         }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
                 opacity: 1;
             }
+
             50% {
                 transform: scale(1.1);
                 opacity: 0.8;
@@ -90,23 +99,29 @@ $listinoOnline = ($rowOnline && $rowOnline['online'] === 'si');
         }
 
         /* Header e Navigation */
-    /* Header e Navigation */
-header {
-    position: fixed;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.95); /* ← CAMBIA: da rgba(255, 255, 255, 0.95) rimane uguale per avere bianco opaco iniziale */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    z-index: 1000;
-    padding: 0.8rem 0;
-    transition: all 0.3s ease; /* ← AGGIUNGI questa riga per la transizione fluida */
-}
+        /* Header e Navigation */
+        header {
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            /* ← CAMBIA: da rgba(255, 255, 255, 0.95) rimane uguale per avere bianco opaco iniziale */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 0.8rem 0;
+            transition: all 0.3s ease;
+            /* ← AGGIUNGI questa riga per la transizione fluida */
+        }
 
-header.scrolled { /* ← AGGIUNGI questa nuova classe */
-    background: rgba(255, 255, 255, 0.7); /* più trasparente quando scrolla */
-    box-shadow: 0 2px 15px rgba(0,0,0,0.15);
-    backdrop-filter: blur(10px); /* effetto vetro smerigliato */
-    -webkit-backdrop-filter: blur(10px); /* compatibilità Safari */
-}
+        header.scrolled {
+            /* ← AGGIUNGI questa nuova classe */
+            background: rgba(255, 255, 255, 0.7);
+            /* più trasparente quando scrolla */
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            /* effetto vetro smerigliato */
+            -webkit-backdrop-filter: blur(10px);
+            /* compatibilità Safari */
+        }
 
         nav {
             max-width: 100%;
@@ -218,9 +233,17 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
             transform: translateY(0);
         }
 
-        .menu-overlay.active .nav-links li:nth-child(1) { transition-delay: 0.1s; }
-        .menu-overlay.active .nav-links li:nth-child(2) { transition-delay: 0.2s; }
-        .menu-overlay.active .nav-links li:nth-child(3) { transition-delay: 0.3s; }
+        .menu-overlay.active .nav-links li:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .menu-overlay.active .nav-links li:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .menu-overlay.active .nav-links li:nth-child(3) {
+            transition-delay: 0.3s;
+        }
 
         .nav-links a {
             text-decoration: none;
@@ -282,7 +305,8 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
             margin-bottom: 1rem;
         }
 
-        .footer-section p, .footer-section a {
+        .footer-section p,
+        .footer-section a {
             color: #ccc;
             text-decoration: none;
             display: block;
@@ -330,9 +354,9 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px),
-                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px);
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255, 255, 255, .03) 35px, rgba(255, 255, 255, .03) 70px),
+                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(255, 255, 255, .03) 35px, rgba(255, 255, 255, .03) 70px);
             opacity: 0.5;
             pointer-events: none;
         }
@@ -575,21 +599,21 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
             .olimpiadi-content h2 {
                 font-size: 2rem;
             }
-            
+
             .olimpiadi-date {
                 font-size: 1.3rem;
             }
-            
+
             .price-row {
                 flex-direction: column;
                 gap: 1rem;
                 text-align: center;
             }
-            
+
             .price-label {
                 font-size: 1.1rem;
             }
-            
+
             .price-value {
                 font-size: 1.8rem;
             }
@@ -597,11 +621,11 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
             .listino-container {
                 grid-template-columns: 1fr;
             }
-            
+
             .listino-header h2 {
                 font-size: 2rem;
             }
-            
+
             .price-header {
                 flex-direction: column;
                 align-items: flex-start;
@@ -609,8 +633,9 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
         }
     </style>
 </head>
+
 <body>
-     <!-- Loading Screen -->
+    <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <img src="./images/logoA.webp" alt="Loading Logo" class="loading-logo">
     </div>
@@ -619,7 +644,7 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
     <header>
         <nav>
             <div class="nav-left">
-            <a href="./index.php"><img src="./images/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo"></a>
+                <a href="./index.php"><img src="./images/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo"></a>
             </div>
             <div class="nav-right">
                 <a href="./listinoprezzi.php" class="book-button">PRENOTA</a>
@@ -637,20 +662,20 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
         <ul class="nav-links">
             <li><a href="./index.php" onclick="toggleMenu()">Home</a></li>
             <li><a href="./listinoprezzi.php" onclick="toggleMenu()">Listino Prezzi</a></li>
-             <li><a href="./galleria.php" onclick="toggleMenu()">Galleria</a></li>
+            <li><a href="./galleria.php" onclick="toggleMenu()">Galleria</a></li>
             <li><a href="./contatti.php" onclick="toggleMenu()">Contatti</a></li>
         </ul>
     </div>
 
     <!-- Main Content -->
     <main>
-  
 
-       <!-- SEZIONE LISTINO PREZZI -->
+
+        <!-- SEZIONE LISTINO PREZZI -->
         <section class="listino-section">
 
 
-        
+
             <div class="listino-header">
                 <h2>Listino prezzi diretti</h2>
                 <p class="listino-description">Il nostro listino prezzi varia a seconda del periodo stagionale. Tariffe indicate per notte.</p>
@@ -666,123 +691,123 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
 
 
 
-<!-- CERCA E SOSTITUISCI QUESTA PARTE -->
-<!-- Note aggiuntive -->
-<div class="listino-header" style="margin-top: 3rem;">
-    <div class="note-importanti">
-        <h3>Note importanti</h3>
-        <ul class="note-list">
-            <li>
-                <span class="note-icon">👶</span>
-                <span class="note-text">Bambini fino a 6 anni gratuiti</span>
-            </li>
-            <li>
-                <span class="note-icon">🧒</span>
-                <span class="note-text">Bambini dai 7 ai 17 anni: € 20 a notte</span>
-            </li>
-            <li>
-                <span class="note-icon">🎁</span>
-                <span class="note-text">Per soggiorni di 5 notti o più applichiamo il 10% di sconto</span>
-            </li>
-            <li>
-                <span class="note-icon">🐾</span>
-                <span class="note-text">Al momento animali non ammessi</span>
-            </li>
-        </ul>
-    </div>
-</div>
-<style>
-    /* NOTE IMPORTANTI STYLES */
-.note-importanti {
-    max-width: 900px;
-    margin: 0 auto;
-    background: white;
-    padding: 2.5rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    text-align: left;
-}
+            <!-- CERCA E SOSTITUISCI QUESTA PARTE -->
+            <!-- Note aggiuntive -->
+            <div class="listino-header" style="margin-top: 3rem;">
+                <div class="note-importanti">
+                    <h3>Note importanti</h3>
+                    <ul class="note-list">
+                        <li>
+                            <span class="note-icon">👶</span>
+                            <span class="note-text">Bambini fino a 6 anni gratuiti</span>
+                        </li>
+                        <li>
+                            <span class="note-icon">🧒</span>
+                            <span class="note-text">Bambini dai 7 ai 17 anni: € 20 a notte</span>
+                        </li>
+                        <li>
+                            <span class="note-icon">🎁</span>
+                            <span class="note-text">Per soggiorni di 5 notti o più applichiamo il 10% di sconto</span>
+                        </li>
+                        <li>
+                            <span class="note-icon">🐾</span>
+                            <span class="note-text">Al momento animali non ammessi</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <style>
+                /* NOTE IMPORTANTI STYLES */
+                .note-importanti {
+                    max-width: 900px;
+                    margin: 0 auto;
+                    background: white;
+                    padding: 2.5rem;
+                    border-radius: 10px;
+                    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+                    text-align: left;
+                }
 
-.note-importanti h3 {
-    font-size: 1.8rem;
-    color: #db7343;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    font-weight: 500;
-}
+                .note-importanti h3 {
+                    font-size: 1.8rem;
+                    color: #db7343;
+                    margin-bottom: 1.5rem;
+                    text-align: center;
+                    font-weight: 500;
+                }
 
-.note-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+                .note-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
 
-.note-list li {
-    display: flex;
-    align-items: center;
-    padding: 1rem 0;
-    border-bottom: 1px solid #f0f0f0;
-    transition: all 0.3s ease;
-}
+                .note-list li {
+                    display: flex;
+                    align-items: center;
+                    padding: 1rem 0;
+                    border-bottom: 1px solid #f0f0f0;
+                    transition: all 0.3s ease;
+                }
 
-.note-list li:last-child {
-    border-bottom: none;
-}
+                .note-list li:last-child {
+                    border-bottom: none;
+                }
 
-.note-list li:hover {
-    background: rgba(219, 115, 67, 0.03);
-    padding-left: 1rem;
-    border-radius: 8px;
-}
+                .note-list li:hover {
+                    background: rgba(219, 115, 67, 0.03);
+                    padding-left: 1rem;
+                    border-radius: 8px;
+                }
 
-.note-icon {
-    font-size: 1.8rem;
-    min-width: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+                .note-icon {
+                    font-size: 1.8rem;
+                    min-width: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
 
-.note-text {
-    font-size: 1.05rem;
-    color: #555;
-    line-height: 1.6;
-}
+                .note-text {
+                    font-size: 1.05rem;
+                    color: #555;
+                    line-height: 1.6;
+                }
 
-@media (max-width: 768px) {
-    .note-importanti {
-        padding: 1.5rem;
-    }
-    
-    .note-importanti h3 {
-        font-size: 1.5rem;
-    }
-    
-    .note-icon {
-        font-size: 1.5rem;
-        min-width: 40px;
-    }
-    
-    .note-text {
-        font-size: 0.95rem;
-    }
-}
-</style>
+                @media (max-width: 768px) {
+                    .note-importanti {
+                        padding: 1.5rem;
+                    }
 
+                    .note-importanti h3 {
+                        font-size: 1.5rem;
+                    }
 
+                    .note-icon {
+                        font-size: 1.5rem;
+                        min-width: 40px;
+                    }
+
+                    .note-text {
+                        font-size: 0.95rem;
+                    }
+                }
+            </style>
 
 
 
 
 
-<div class="listino-container">
+
+
+            <div class="listino-container">
                 <!-- BASSA STAGIONE -->
                 <div class="season-column">
                     <h3>Bassa stagione</h3>
                     <p class="season-months">Marzo, Aprile, Maggio, Settembre, Ottobre e Novembre</p>
                     <p class="season-note">*escluse festività</p>
 
-                    <?php if ($listinoOnline && !empty($prezziBassa)): ?>
+                    <?php if (!empty($prezziBassa)): ?>
                         <?php foreach ($prezziBassa as $prezzo): ?>
                             <div class="price-card">
                                 <div class="price-header">
@@ -792,33 +817,13 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
                             </div>
                         <?php endforeach; ?>
                     <?php else: ?>
-                        <!-- Prezzi di default se listino offline o vuoto -->
-                        <div class="price-card">
-                            <div class="price-header">
-                                <h4>1 adulto</h4>
-                                <span class="price-tag">€ 80,00</span>
-                            </div>
-                        </div>
-
-                        <div class="price-card">
-                            <div class="price-header">
-                                <h4>2 adulti</h4>
-                                <span class="price-tag">€ 120,00</span>
-                            </div>
-                        </div>
-
-                        <div class="price-card">
-                            <div class="price-header">
-                                <h4>3 adulti</h4>
-                                <span class="price-tag">€ 160,00</span>
-                            </div>
-                        </div>
-
-                        <div class="price-card">
-                            <div class="price-header">
-                                <h4>4 adulti</h4>
-                                <span class="price-tag">€ 200,00</span>
-                            </div>
+                        <div class="price-card" style="text-align: center; padding: 2rem;">
+                            <p style="color: #db7343; font-size: 1.2rem; margin-bottom: 0.5rem;">
+                                ⚠️ Non ci sono prezzi disponibili al momento
+                            </p>
+                            <p style="color: #666; font-size: 1rem;">
+                                Ti invitiamo a contattarci per maggiori informazioni
+                            </p>
                         </div>
                     <?php endif; ?>
                 </div>
@@ -829,7 +834,7 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
                     <p class="season-months">Dicembre, Gennaio, Febbraio, Giugno, Luglio e Agosto</p>
                     <p class="season-note">*dal 6 al 22 febbraio tariffe maggiorate per Olimpiadi</p>
 
-                    <?php if ($listinoOnline && !empty($prezziAlta)): ?>
+                    <?php if (!empty($prezziAlta)): ?>
                         <?php foreach ($prezziAlta as $prezzo): ?>
                             <div class="price-card">
                                 <div class="price-header">
@@ -839,42 +844,22 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
                             </div>
                         <?php endforeach; ?>
                     <?php else: ?>
-                        <!-- Prezzi di default se listino offline o vuoto -->
-                        <div class="price-card">
-                            <div class="price-header">
-                                <h4>1 adulto</h4>
-                                <span class="price-tag">€ 100,00</span>
-                            </div>
-                        </div>
-
-                        <div class="price-card">
-                            <div class="price-header">
-                                <h4>2 adulti</h4>
-                                <span class="price-tag">€ 140,00</span>
-                            </div>
-                        </div>
-
-                        <div class="price-card">
-                            <div class="price-header">
-                                <h4>3 adulti</h4>
-                                <span class="price-tag">€ 180,00</span>
-                            </div>
-                        </div>
-
-                        <div class="price-card">
-                            <div class="price-header">
-                                <h4>4 adulti</h4>
-                                <span class="price-tag">€ 220,00</span>
-                            </div>
+                        <div class="price-card" style="text-align: center; padding: 2rem;">
+                            <p style="color: #db7343; font-size: 1.2rem; margin-bottom: 0.5rem;">
+                                ⚠️ Non ci sono prezzi disponibili al momento
+                            </p>
+                            <p style="color: #666; font-size: 1rem;">
+                                Ti invitiamo a contattarci per maggiori informazioni
+                            </p>
                         </div>
                     <?php endif; ?>
                 </div>
             </div>
 
-        
+
         </section>
 
-              <!-- SEZIONE SPECIALE OLIMPIADI -->
+        <!-- SEZIONE SPECIALE OLIMPIADI -->
         <!--<section class="olimpiadi-section">
             <div class="olimpiadi-pattern"></div>
             <div class="olimpiadi-content">
@@ -893,86 +878,86 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
         </section>-->
     </main>
 
- <!-- Aggiungi questo nel <head> del tuo HTML -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Aggiungi questo nel <head> del tuo HTML -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- CSS da aggiungere nel tuo <style> -->
-<style>
-/* Social Icons Styles */
-.social-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
+    <!-- CSS da aggiungere nel tuo <style> -->
+    <style>
+        /* Social Icons Styles */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
 
-.social-links a {
-    color: #ccc;
-    font-size: 1.8rem;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-}
+        .social-links a {
+            color: #ccc;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
 
-.social-links a:hover {
-    color: #db7343;
-    background: rgba(219, 115, 67, 0.1);
-    transform: translateY(-3px);
-}
+        .social-links a:hover {
+            color: #db7343;
+            background: rgba(219, 115, 67, 0.1);
+            transform: translateY(-3px);
+        }
 
-.social-links a i {
-    transition: transform 0.3s ease;
-}
+        .social-links a i {
+            transition: transform 0.3s ease;
+        }
 
-.social-links a:hover i {
-    transform: scale(1.1);
-}
-</style>
+        .social-links a:hover i {
+            transform: scale(1.1);
+        }
+    </style>
 
-<!-- FOOTER HTML -->
-<footer id="contatti">
-    <div class="footer-content">
-        <div class="footer-section">
-            <h3>C'Amunin</h3>
-            <p>Via Adda, 18</p>
-            <p>23030 Chiuro (SO)</p>
-            <p>Valtellina - Italia</p>
-        </div>
-        <div class="footer-section">
-            <h3>Contatti</h3>
-            <p>Tel: +39 366.8283156</p>
-            <p>Email: camunin.casavacanze@gmail.com</p>
-        </div>
-        <div class="footer-section">
-            <h3>Seguici</h3>
-            <div class="social-links">
-                <a href="https://www.instagram.com/camunin.casavacanze/" target="_blank" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
+    <!-- FOOTER HTML -->
+    <footer id="contatti">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>C'Amunin</h3>
+                <p>Via Adda, 18</p>
+                <p>23030 Chiuro (SO)</p>
+                <p>Valtellina - Italia</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contatti</h3>
+                <p>Tel: +39 366.8283156</p>
+                <p>Email: camunin.casavacanze@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Seguici</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/camunin.casavacanze/" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
 
-                <a href="https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2F%40camunin.casavacanze%3F_r%3D1%26_t%3DZN-91tbUUz1Upy&lang=en&enter_method=mandatory" target="_blank" title="TikTok">
-                    <i class="fab fa-tiktok"></i>
-                </a>
-                <a href="https://www.facebook.com/people/CAmunin-Casa-Vacanze/61583657716861/?rdid=AIKZ696fgzkfR3Ju&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CZYbTg1zQ%2F" target="_blank" title="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.booking.com/hotel/it/amunin.it.html?aid=964694&app_hotel_id=15313738&checkin=2025-12-27&checkout=2025-12-29&from_sn=android&group_adults=2&group_children=0&label=hotel_details-ixj11u%401764710303&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&chal_t=1765230953365&force_referer=" target="_blank" title="Booking">
-                    <i class="fas fa-bed"></i>
-                </a>
+                    <a href="https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2F%40camunin.casavacanze%3F_r%3D1%26_t%3DZN-91tbUUz1Upy&lang=en&enter_method=mandatory" target="_blank" title="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://www.facebook.com/people/CAmunin-Casa-Vacanze/61583657716861/?rdid=AIKZ696fgzkfR3Ju&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CZYbTg1zQ%2F" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.booking.com/hotel/it/amunin.it.html?aid=964694&app_hotel_id=15313738&checkin=2025-12-27&checkout=2025-12-29&from_sn=android&group_adults=2&group_children=0&label=hotel_details-ixj11u%401764710303&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&chal_t=1765230953365&force_referer=" target="_blank" title="Booking">
+                        <i class="fas fa-bed"></i>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2025 C'Amunin. Tutti i diritti riservati. - CIN: IT014020C25KZ2NAGV - CIR: 014020-LNI-00006</p>
-        <p>Realizzato da: <a href="https://emilioverri.altervista.org/" target="_blank">Emilio Verri</a></p>
-    </div>
-</footer>
+        <div class="footer-bottom">
+            <p>&copy; 2025 C'Amunin. Tutti i diritti riservati. - CIN: IT014020C25KZ2NAGV - CIR: 014020-LNI-00006</p>
+            <p>Realizzato da: <a href="https://emilioverri.altervista.org/" target="_blank">Emilio Verri</a></p>
+        </div>
+    </footer>
 
     <script>
         // Loading Screen
@@ -1012,7 +997,7 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
 
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -1029,14 +1014,15 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
 
 
         // Header scroll effect
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
     </script>
 </body>
+
 </html>

@@ -391,16 +391,35 @@
         </nav>
     </header>
 
-    <!-- Menu Overlay -->
-    <div class="menu-overlay" id="menuOverlay">
-        <ul class="nav-links">
-            <li><a href="./index.php" onclick="toggleMenu()">Home</a></li>
-            <li><a href="./listinoprezzi.php" onclick="toggleMenu()">Listino Prezzi</a></li>
-            <li><a href="./galleria.php" onclick="toggleMenu()">Galleria</a></li>
-            <li><a href="./contatti.php" onclick="toggleMenu()">Contatti</a></li>
-        </ul>
-    </div>
+<?php
+// Configurazione database
+    $host = 'localhost';
+    $dbname = 'my_camunin';
+    $username = 'root';
+    $password = '';
 
+    // Connessione al database
+    try {
+        $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        die("Errore di connessione al database");
+    }
+    // Verifica stato online del listino
+    $stmtOnline = $pdo->query("SELECT online FROM onlinelistino ORDER BY id DESC LIMIT 1");
+    $rowOnline = $stmtOnline->fetch(PDO::FETCH_ASSOC);
+    $listinoOnline = ($rowOnline && $rowOnline['online'] === 'si');
+?>
+<div class="menu-overlay" id="menuOverlay">
+    <ul class="nav-links">
+        <li><a href="./index.php" onclick="toggleMenu()">Home</a></li>
+        <?php if ($listinoOnline): ?>
+            <li><a href="./listinoprezzi.php" onclick="toggleMenu()">Listino Prezzi</a></li>
+        <?php endif; ?>
+        <li><a href="./galleria.php" onclick="toggleMenu()">Galleria</a></li>
+        <li><a href="./contatti.php" onclick="toggleMenu()">Contatti</a></li>
+    </ul>
+</div>
     <!-- Error Section -->
     <section class="error-section">
         <div class="error-container">
