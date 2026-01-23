@@ -1,9 +1,12 @@
 
 
 <?php
-// Avvia la sessione
 session_start();
-
+// SE L'UTENTE È GIÀ LOGGATO, REINDIRIZZA ALLA DASHBOARD
+if (isset($_SESSION['admin_logged']) && $_SESSION['admin_logged'] === true) {
+    header('Location: dashboard.php');
+    exit;
+}
 // Configurazione database
 $host = 'localhost';
 $dbname = 'my_camunin';
@@ -43,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['admin_username'] = $utente['username'];
             
             // Reindirizza a prezzi.php
-            header('Location: prezzi.php');
+            header('Location: dashboard.php');
             exit;
         } else {
             $errore = 'Username o password non validi';

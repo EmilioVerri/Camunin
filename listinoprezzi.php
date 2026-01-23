@@ -1,6 +1,39 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+
+
+<?php
+
+// Configurazione database
+$host = 'localhost';
+$dbname = 'my_camunin';
+$username = 'root';
+$password = '';
+
+// Connessione al database
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    die("Errore di connessione al database");
+}
+
+// Recupera i prezzi di Bassa Stagione
+$stmtBassa = $pdo->query("SELECT id, descrizione, prezzo FROM bassastagione ORDER BY id ASC");
+$prezziBassa = $stmtBassa->fetchAll(PDO::FETCH_ASSOC);
+
+// Recupera i prezzi di Alta Stagione
+$stmtAlta = $pdo->query("SELECT id, descrizione, prezzo FROM altastagione ORDER BY id ASC");
+$prezziAlta = $stmtAlta->fetchAll(PDO::FETCH_ASSOC);
+
+// Verifica stato online del listino
+$stmtOnline = $pdo->query("SELECT online FROM onlinelistino ORDER BY id DESC LIMIT 1");
+$rowOnline = $stmtOnline->fetch(PDO::FETCH_ASSOC);
+$listinoOnline = ($rowOnline && $rowOnline['online'] === 'si');
+
+
+?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
@@ -742,40 +775,52 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
 
 
 
-            <div class="listino-container">
+<div class="listino-container">
                 <!-- BASSA STAGIONE -->
                 <div class="season-column">
                     <h3>Bassa stagione</h3>
                     <p class="season-months">Marzo, Aprile, Maggio, Settembre, Ottobre e Novembre</p>
                     <p class="season-note">*escluse festività</p>
 
-                    <div class="price-card">
-                        <div class="price-header">
-                            <h4>1 adulto</h4>
-                            <span class="price-tag">€ 80,00</span>
+                    <?php if ($listinoOnline && !empty($prezziBassa)): ?>
+                        <?php foreach ($prezziBassa as $prezzo): ?>
+                            <div class="price-card">
+                                <div class="price-header">
+                                    <h4><?php echo htmlspecialchars($prezzo['descrizione']); ?></h4>
+                                    <span class="price-tag">€ <?php echo number_format($prezzo['prezzo'], 2, ',', '.'); ?></span>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <!-- Prezzi di default se listino offline o vuoto -->
+                        <div class="price-card">
+                            <div class="price-header">
+                                <h4>1 adulto</h4>
+                                <span class="price-tag">€ 80,00</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="price-card">
-                        <div class="price-header">
-                            <h4>2 adulti</h4>
-                            <span class="price-tag">€ 120,00</span>
+                        <div class="price-card">
+                            <div class="price-header">
+                                <h4>2 adulti</h4>
+                                <span class="price-tag">€ 120,00</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="price-card">
-                        <div class="price-header">
-                            <h4>3 adulti</h4>
-                            <span class="price-tag">€ 160,00</span>
+                        <div class="price-card">
+                            <div class="price-header">
+                                <h4>3 adulti</h4>
+                                <span class="price-tag">€ 160,00</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="price-card">
-                        <div class="price-header">
-                            <h4>4 adulti</h4>
-                            <span class="price-tag">€ 200,00</span>
+                        <div class="price-card">
+                            <div class="price-header">
+                                <h4>4 adulti</h4>
+                                <span class="price-tag">€ 200,00</span>
+                            </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
                 </div>
 
                 <!-- ALTA STAGIONE -->
@@ -784,33 +829,45 @@ header.scrolled { /* ← AGGIUNGI questa nuova classe */
                     <p class="season-months">Dicembre, Gennaio, Febbraio, Giugno, Luglio e Agosto</p>
                     <p class="season-note">*dal 6 al 22 febbraio tariffe maggiorate per Olimpiadi</p>
 
-                    <div class="price-card">
-                        <div class="price-header">
-                            <h4>1 adulto</h4>
-                            <span class="price-tag">€ 100,00</span>
+                    <?php if ($listinoOnline && !empty($prezziAlta)): ?>
+                        <?php foreach ($prezziAlta as $prezzo): ?>
+                            <div class="price-card">
+                                <div class="price-header">
+                                    <h4><?php echo htmlspecialchars($prezzo['descrizione']); ?></h4>
+                                    <span class="price-tag">€ <?php echo number_format($prezzo['prezzo'], 2, ',', '.'); ?></span>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <!-- Prezzi di default se listino offline o vuoto -->
+                        <div class="price-card">
+                            <div class="price-header">
+                                <h4>1 adulto</h4>
+                                <span class="price-tag">€ 100,00</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="price-card">
-                        <div class="price-header">
-                            <h4>2 adulti</h4>
-                            <span class="price-tag">€ 140,00</span>
+                        <div class="price-card">
+                            <div class="price-header">
+                                <h4>2 adulti</h4>
+                                <span class="price-tag">€ 140,00</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="price-card">
-                        <div class="price-header">
-                            <h4>3 adulti</h4>
-                            <span class="price-tag">€ 180,00</span>
+                        <div class="price-card">
+                            <div class="price-header">
+                                <h4>3 adulti</h4>
+                                <span class="price-tag">€ 180,00</span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="price-card">
-                        <div class="price-header">
-                            <h4>4 adulti</h4>
-                            <span class="price-tag">€ 220,00</span>
+                        <div class="price-card">
+                            <div class="price-header">
+                                <h4>4 adulti</h4>
+                                <span class="price-tag">€ 220,00</span>
+                            </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
                 </div>
             </div>
 
