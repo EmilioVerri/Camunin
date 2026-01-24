@@ -641,7 +641,7 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 C'Amunin. Tutti i diritti riservati. - CIN: IT014020C25KZ2NAGV - CIR: 014020-LNI-00006</p>
-            <p>Realizzato da: <a href="https://emilioverri.altervista.org/" target="_blank">Emilio Verri</a></p>
+            <p>Realizzato da: <a href="https://emilioverri.altervista.org/" target="_blank">V3RR1L0G1C</a></p>
         </div>
     </footer>
 
