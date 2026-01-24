@@ -2142,12 +2142,12 @@ document.addEventListener('DOMContentLoaded', () => {
 </footer>
 
     <script>
-        // Loading Screen
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loadingScreen').classList.add('hidden');
-            }, 1000);
-        });
+       // Loading Screen - nasconde dopo 1 secondo SENZA aspettare tutte le immagini
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.getElementById('loadingScreen').classList.add('hidden');
+    }, 1200);
+});
 
         // Menu Hamburger Toggle
         function toggleMenu() {
