@@ -12,7 +12,7 @@ header('Content-Type: application/json');
 
 // Configurazione database
 $host = 'localhost';
-$dbname = 'my_camunin';
+$dbname = 'my_avid4068866';
 $username = 'root';
 $password = '';
 

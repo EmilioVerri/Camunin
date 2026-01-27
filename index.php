@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./image/favicon.ico">
     <title>C'Amunin</title>
        <!-- AGGIUNGI QUESTA RIGA PER FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -306,21 +306,21 @@ header.scrolled {
 
        .slide3 {
             background-color: #db7343;
-            background-image: url('./images/scorrevoleTre.jpg');
+            background-image: url('./image/scorrevoleTre.jpg');
         }
 
         .slide1 {
             background-color: #db7343;
-            background-image: url('./images/casacongiardino.jpg');
+            background-image: url('./image/scorrevoleUno.jpg');
         }
 
         .slide2 {
             background-color: #db7343;
-            background-image: url('./images/scorrevoleDue.jpg');
+            background-image: url('./image/scorrevoleDue.jpg');
         }
        /*         .slide3 {
             background-color: #db7343;
-            background-image: url('./images/salacucina.jpg');
+            background-image: url('./image/salacucina.jpg');
         }*/
 
         .hero-content {
@@ -644,14 +644,14 @@ header.scrolled {
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
-        <img src="./images/logoA.webp" alt="Loading Logo" class="loading-logo">
+        <img src="./image/logoA.webp" alt="Loading Logo" class="loading-logo">
     </div>
 
     <!-- Header -->
     <header>
         <nav>
             <div class="nav-left">
-                <a href="./index.php"><img src="./images/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo"></a>
+                <a href="./index.php"><img src="./image/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo"></a>
             </div>
             <div class="nav-right">
                 <a href="./listinoprezzi.php" class="book-button">PRENOTA</a>
@@ -667,7 +667,7 @@ header.scrolled {
 <?php
 // Configurazione database
     $host = 'localhost';
-    $dbname = 'my_camunin';
+    $dbname = 'my_avid4068866';
     $username = 'root';
     $password = '';
 
@@ -726,7 +726,7 @@ header.scrolled {
     <div class="intro-container">
         <!-- Immagine Sara e Teo a sinistra -->
         <div class="intro-image-container">
-            <img src="./images/sara.jpg" alt="Sara con Teo" class="intro-image">
+            <img src="./image/sara.jpg" alt="Sara con Teo" class="intro-image">
         </div>
         
         <!-- Testo a destra -->
@@ -848,7 +848,7 @@ header.scrolled {
     <div class="features-container">
         <!-- Card 1 -->
         <div class="feature-card">
-            <div class="feature-image" style="background-image: url('./images/cucina.jpg');" onclick="openModal(0)">
+            <div class="feature-image" style="background-image: url('./image/cucina.jpg');" onclick="openModal(0)">
                 <div class="feature-overlay"></div>
             </div>
             <div class="feature-content">
@@ -861,7 +861,7 @@ header.scrolled {
 
         <!-- Card 2 -->
         <div class="feature-card">
-            <div class="feature-image" style="background-image: url('./images/zonarelax.jpg');" onclick="openModal(1)">
+            <div class="feature-image" style="background-image: url('./image/zonarelax.jpg');" onclick="openModal(1)">
                 <div class="feature-overlay"></div>
             </div>
             <div class="feature-content">
@@ -873,7 +873,7 @@ header.scrolled {
 
         <!-- Card 3 - MODIFICATA -->
         <div class="feature-card">
-            <div class="feature-image" style="background-image: url('./images/terrazzaDue.jpg');" onclick="openModal(2)">
+            <div class="feature-image" style="background-image: url('./image/terrazzaDue.jpg');" onclick="openModal(2)">
                 <div class="feature-overlay"></div>
             </div>
             <div class="feature-content">
@@ -886,7 +886,7 @@ header.scrolled {
 
         <!-- Card 4 - MODIFICATA -->
         <div class="feature-card">
-            <div class="feature-image" style="background-image: url('./images/cameraMatrimonialeDue.jpg');" onclick="openModal(3)">
+            <div class="feature-image" style="background-image: url('./image/cameraMatrimonialeDue.jpg');" onclick="openModal(3)">
                 <div class="feature-overlay"></div>
             </div>
             <div class="feature-content">
@@ -899,7 +899,7 @@ header.scrolled {
 
         <!-- Card 5 - MODIFICATA -->
         <div class="feature-card">
-            <div class="feature-image" style="background-image: url('./images/cameraMatrimonialeTre.jpg');" onclick="openModal(4)">
+            <div class="feature-image" style="background-image: url('./image/cameraMatrimonialeTre.jpg');" onclick="openModal(4)">
                 <div class="feature-overlay"></div>
             </div>
             <div class="feature-content">
@@ -912,7 +912,7 @@ header.scrolled {
 
         <!-- Card 6 - MODIFICATA -->
         <div class="feature-card">
-            <div class="feature-image" style="background-image: url('./images/bagnoDue.jpg');" onclick="openModal(5)">
+            <div class="feature-image" style="background-image: url('./image/bagnoDue.jpg');" onclick="openModal(5)">
                 <div class="feature-overlay"></div>
             </div>
             <div class="feature-content">
@@ -1129,27 +1129,27 @@ header.scrolled {
 // DATI FEATURES - SOSTITUISCI QUESTO ARRAY
 const featuresData = [
     {
-        image: './images/cucina.jpg',
+        image: './image/cucina.jpg',
         description: 'La cucina è dotata di tutto il necessario: frigor, frizzer, piatti, bicchieri, tazze, posate, ciotole, pentole, padelle, moka, bollitore dell\'acqua, spremiagrumi, kit monouso pulizie, sgrassatore e lavastoviglie.'
     },
     {
-        image: './images/zonarelax.jpg',
+        image: './image/zonarelax.jpg',
         description: 'Puoi rilassarti sul divano guardando la TV o il fuoco della stufa a legna.'
     },
     {
-        image: './images/terrazzaDue.jpg',
+        image: './image/terrazzaDue.jpg',
         description: 'Gli ospiti possono usufruire di un ampio giardino recintato ad uso esclusivo e di una spaziosa terrazza panoramica, perfetta per pranzi e momenti di relax all\'aperto nei mesi primaverili ed estivi.'
     },
     {
-        image: './images/cameraMatrimonialeDue.jpg',
+        image: './image/cameraMatrimonialeDue.jpg',
         description: 'La prima camera matrimoniale, con travi a vista, offre una splendida vista sul giardino e sulle Alpi, creando un\'atmosfera calda, luminosa e rilassante.'
     },
     {
-        image: './images/cameraMatrimonialeTre.jpg',
+        image: './image/cameraMatrimonialeTre.jpg',
         description: 'La seconda camera matrimoniale, con culla, gode di doppia esposizione e offre una splendida vista sul giardino e sulle Alpi Retiche. È fornita di lenzuola e dispone di TV.'
     },
     {
-        image: './images/bagnoDue.jpg',
+        image: './image/bagnoDue.jpg',
         description: 'Bagno finestrato con doccia, completo di set di asciugamani. Su richiesta è disponibile gratuitamente una lavatrice al piano inferiore.'
     }
 ];

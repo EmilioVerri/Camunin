@@ -9,7 +9,7 @@ if (isset($_SESSION['admin_logged']) && $_SESSION['admin_logged'] === true) {
 }
 // Configurazione database
 $host = 'localhost';
-$dbname = 'my_camunin';
+$dbname = 'my_avid4068866';
 $username = 'root';
 $password = '';
 
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="it">
 <head>
-        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="../image/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login - Camunin</title>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./image/favicon.ico">
     <title>Galleria - C'Amunin Casa Vacanze</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -512,14 +512,14 @@
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
-        <img src="./images/logoA.webp" alt="Loading Logo" class="loading-logo">
+        <img src="./image/logoA.webp" alt="Loading Logo" class="loading-logo">
     </div>
 
     <!-- Header -->
     <header>
         <nav>
             <div class="nav-left">
-                <a href="./index.php"><img src="./images/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo"></a>
+                <a href="./index.php"><img src="./image/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo"></a>
             </div>
             <div class="nav-right">
                 <a href="./listinoprezzi.php" class="book-button">PRENOTA</a>
@@ -535,7 +535,7 @@
 <?php
 // Configurazione database
     $host = 'localhost';
-    $dbname = 'my_camunin';
+    $dbname = 'my_avid4068866';
     $username = 'root';
     $password = '';
 

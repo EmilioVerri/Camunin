@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./image/favicon.ico">
     <title>Contatti - Camunin</title>
 
 <?php
@@ -21,8 +21,8 @@ $messaggio_errore = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recupero dati
-    $nome = isset($_POST['nome']) ? htmlspecialchars(trim($_POST['nome'])) : '';
-    $cognome = isset($_POST['cognome']) ? htmlspecialchars(trim($_POST['cognome'])) : '';
+   // $nome = isset($_POST['nome']) ? htmlspecialchars(trim($_POST['nome'])) : '';
+   // $cognome = isset($_POST['cognome']) ? htmlspecialchars(trim($_POST['cognome'])) : '';
     $email = isset($_POST['email']) ? filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL) : '';
     $note = isset($_POST['note']) ? htmlspecialchars(trim($_POST['note'])) : 'Nessuna nota aggiunta';
     $privacy = isset($_POST['privacy']) ? true : false;
@@ -30,8 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validazione
     $errori = [];
     
-    if (empty($nome)) $errori[] = "Il nome è obbligatorio";
-    if (empty($cognome)) $errori[] = "Il cognome è obbligatorio";
+    //if (empty($nome)) $errori[] = "Il nome è obbligatorio";
+   // if (empty($cognome)) $errori[] = "Il cognome è obbligatorio";
     if (empty($email)) {
         $errori[] = "L'email è obbligatoria";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -75,10 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="content">
                     <h2 class="section-title">📋 Dettagli del Contatto</h2>
                     <div class="info-box">
-                        <div class="info-row">
-                            <span class="info-label">👤 Nome:</span>
-                            <span class="info-value">' . $nome . ' ' . $cognome . '</span>
-                        </div>
+                       
                         <div class="info-row">
                             <span class="info-label">📧 Email:</span>
                             <span class="info-value">' . $email . '</span>
@@ -139,7 +136,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h1>✅ CONFERMA RICHIESTA</h1>
                     </div>
                     <div class="content">
-                        <p class="greeting">Ciao ' . $nome . ',</p>
+                        <p class="greeting">Ciao ' . $email . ',</p>
                         <p class="message">
                             Grazie per averci contattato! Abbiamo ricevuto la tua richiesta </strong>.
                         </p>
@@ -176,7 +173,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $messaggio_successo = "✅ Messaggio inviato con successo!";
             
             // Reset campi
-            $nome = $cognome = $email = $note = "";
+            //$nome = $cognome =
+             $email = $note = "";
         } else {
             $messaggio_errore = "❌ Errore nell'invio. Riprova o contattaci direttamente.";
         }
@@ -413,7 +411,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         /* CONTACT HERO SECTION */
         .contact-hero {
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                        url('./images/contattaci.jpg');
+                        url('./image/contattaci.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -893,14 +891,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
-        <img src="./images/logoA.webp" alt="Loading Logo" class="loading-logo">
+        <img src="./image/logoA.webp" alt="Loading Logo" class="loading-logo">
     </div>
 
     <!-- Header -->
     <header>
         <nav>
             <div class="nav-left">
-               <a href="./index.php"><img src="./images/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo"></a>
+               <a href="./index.php"><img src="./image/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo"></a>
             </div>
             <div class="nav-right">
                 <a href="./listinoprezzi.php" class="book-button">PRENOTA</a>
@@ -917,7 +915,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Configurazione database
     $host = 'localhost';
-    $dbname = 'my_camunin';
+    $dbname = 'my_avid4068866';
     $username = 'root';
     $password = '';
 
@@ -975,7 +973,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <form action="" method="POST" id="contactForm">
-                    <div class="form-row">
+                    <!--<div class="form-row">
                         <div class="form-group">
                             <label for="nome">Nome <span>*</span></label>
                             <input type="text" id="nome" name="nome" required placeholder="Il tuo nome" value="<?php echo isset($nome) ? htmlspecialchars($nome) : ''; ?>">
@@ -985,7 +983,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label for="cognome">Cognome <span>*</span></label>
                             <input type="text" id="cognome" name="cognome" required placeholder="Il tuo cognome" value="<?php echo isset($cognome) ? htmlspecialchars($cognome) : ''; ?>">
                         </div>
-                    </div>
+                    </div>-->
 
                     <div class="form-group">
                         <label for="email">Email <span>*</span></label>
