@@ -512,14 +512,14 @@
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
-        <img src="./image/logoA.webp" alt="Loading Logo" class="loading-logo">
+        <img src="./image/logoA.webp"     alt="camunin casa vacanze chiuro" title="camunin casa vacanze chiuro" class="loading-logo">
     </div>
 
     <!-- Header -->
     <header>
         <nav>
             <div class="nav-left">
-                <a href="./index.php"><img src="./image/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo"></a>
+                <a href="./index.php"><img src="./image/logoA.webp" style="height:80px"     alt="camunin casa vacanze chiuro" title="camunin casa vacanze chiuro" class="logo"></a>
             </div>
             <div class="nav-right">
                 <a href="./listinoprezzi.php" class="book-button">PRENOTA</a>
@@ -585,7 +585,7 @@
                         
                         if (in_array($extension, $allowedExtensions) && !in_array($image, $excludeFiles)) {
                             echo '<div class="gallery-item" onclick="openLightbox(' . $imageCount . ')">';
-                            echo '<img src="' . $imageDir . $image . '" alt="Galleria C\'Amunin" loading="lazy">';
+                            echo '<img src="' . $imageDir . $image . '"     alt="camunin casa vacanze chiuro" title="camunin casa vacanze chiuro" loading="lazy">';
                             echo '</div>';
                             $imageCount++;
                         }
@@ -602,7 +602,7 @@
         <span class="lightbox-prev" onclick="changeImage(-1)">&#10094;</span>
         <span class="lightbox-next" onclick="changeImage(1)">&#10095;</span>
         <div class="lightbox-content">
-            <img src="" alt="Immagine ingrandita" id="lightboxImg">
+            <img src=""     alt="camunin casa vacanze chiuro" title="camunin casa vacanze chiuro" id="lightboxImg">
         </div>
         <div class="lightbox-counter" id="lightboxCounter"></div>
     </div>

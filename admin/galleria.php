@@ -772,7 +772,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' || isset($_GET['action'])) {
                     const div = document.createElement('div');
                     div.className = 'selected-file';
                     div.innerHTML = `
-                        <img src="${e.target.result}" alt="${file.name}">
+                        <img src="${e.target.result}"     alt="camunin casa vacanze chiuro" title="camunin casa vacanze chiuro" >
                         <div class="selected-file-name">${file.name}</div>
                         <button class="remove-selected" onclick="removeSelectedFile(${index})">✕</button>
                     `;
@@ -855,7 +855,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' || isset($_GET['action'])) {
                                    class="selection-checkbox" 
                                    ${selectedImages.has(img.name) ? 'checked' : ''}
                                    onclick="event.stopPropagation(); toggleImageSelection('${img.name}', event)">
-                            <img src="../images/${img.name}" alt="${img.name}">
+                            <img src="../images/${img.name}"     alt="camunin casa vacanze chiuro" title="camunin casa vacanze chiuro">
                             <div class="gallery-item-info">
                                 <div class="gallery-item-name" title="${img.name}">${img.name}</div>
                                 <div class="gallery-item-size">${formatFileSize(img.size)}</div>

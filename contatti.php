@@ -889,16 +889,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </style>
 </head>
 <body>
+
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
-        <img src="./image/logoA.webp" alt="Loading Logo" class="loading-logo">
+        <img src="./image/logoA.webp"     alt="camunin casa vacanze chiuro" title="camunin casa vacanze chiuro" class="loading-logo">
     </div>
 
     <!-- Header -->
     <header>
         <nav>
             <div class="nav-left">
-               <a href="./index.php"><img src="./image/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo"></a>
+               <a href="./index.php"><img src="./image/logoA.webp" style="height:80px"     alt="camunin casa vacanze chiuro" title="camunin casa vacanze chiuro" class="logo"></a>
             </div>
             <div class="nav-right">
                 <a href="./listinoprezzi.php" class="book-button">PRENOTA</a>

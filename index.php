@@ -644,7 +644,7 @@ header.scrolled {
 <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
-        <img src="./image/logoA.webp" alt="Loading Logo" class="loading-logo">
+        <img src="./image/logoA.webp"     alt="camunin casa vacanze chiuro" title="camunin casa vacanze chiuro" class="loading-logo">
     </div>
 
     <!-- Header -->
@@ -726,7 +726,7 @@ header.scrolled {
     <div class="intro-container">
         <!-- Immagine Sara e Teo a sinistra -->
         <div class="intro-image-container">
-            <img src="./image/sara.jpg" alt="Sara con Teo" class="intro-image">
+            <img src="./image/sara.jpg"     alt="camunin casa vacanze chiuro" title="camunin casa vacanze chiuro" class="intro-image">
         </div>
         
         <!-- Testo a destra -->
@@ -928,7 +928,7 @@ header.scrolled {
 <div id="imageModal" class="modal" onclick="closeModalOnBackground(event)">
     <span class="close-modal" onclick="closeModal()">&times;</span>
     <div class="modal-content-wrapper">
-        <img class="modal-image" id="modalImage" src="" alt="Feature Image">
+        <img class="modal-image" id="modalImage" src=""     alt="camunin casa vacanze chiuro" title="camunin casa vacanze chiuro">
         <div class="modal-text" id="modalTextContainer">
             <p id="modalDescription"></p>
         </div>

@@ -378,7 +378,7 @@
     <header>
         <nav>
             <div class="nav-left">
-                <a href="./index.php"><img src="./image/logoA.webp" style="height:80px" alt="Camunin Logo" class="logo"></a>
+                <a href="./index.php"><img src="./image/logoA.webp" style="height:80px"     alt="camunin casa vacanze chiuro" title="camunin casa vacanze chiuro" class="logo"></a>
             </div>
             <div class="nav-right">
                 <a href="./listinoprezzi.php" class="book-button">PRENOTA</a>
