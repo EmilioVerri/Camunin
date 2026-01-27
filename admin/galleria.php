@@ -136,6 +136,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' || isset($_GET['action'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestione Galleria - Camunin</title>
+    
+
+<meta name="description" content="Casa vacanze a Chiuro in Valtellina ideale per relax e divertimento. Posizione strategica per sci, terme, trekking e natura. Comfort e tranquillità garantiti.">
+
+<meta name="robots" content="index, follow">
+<meta http-equiv="content-language" content="it">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- OPEN GRAPH (SOCIAL / WHATSAPP) -->
+<meta property="og:title" content="Casa Vacanze Chiuro | Relax e Divertimento in Valtellina">
+<meta property="og:description" content="Alloggio turistico a Chiuro, nel cuore della Valtellina. Perfetto per coppie e famiglie in cerca di relax e attività all’aria aperta.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:url" content="https://www.camunin.it/">
+
+<!-- TWITTER CARD (SENZA IMMAGINI) -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Casa Vacanze Chiuro | Relax e Divertimento in Valtellina">
+<meta name="twitter:description" content="Casa vacanze a Chiuro in Valtellina, ideale per relax, natura e sport in ogni stagione.">
     <style>
         * {
             margin: 0;
